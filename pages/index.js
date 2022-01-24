@@ -10,8 +10,8 @@ export default function Home() {
                 // NavBar
             </Box>
             <ThemeProvider theme={theme}>
-            <Container>
-                //body
+            <Container sx={{ bgcolor: 'bg.main' }}>
+             //body
             </Container>
             </ThemeProvider>
             <Box>
