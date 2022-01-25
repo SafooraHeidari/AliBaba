@@ -10,7 +10,7 @@ export default function Home() {
                 // NavBar
             </Box>
             <ThemeProvider theme={theme}>
-            <Container sx={{ bgcolor: 'bg.main' }}>
+            <Container sx={{ backgroundColor: theme.palette.success.three }}>
              //body
             </Container>
             </ThemeProvider>
