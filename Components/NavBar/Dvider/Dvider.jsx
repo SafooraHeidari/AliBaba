@@ -10,7 +10,7 @@ const Dvider = () => {
         height: "auto",
         width: "auto",
         maxWidth: "100%",
-        background: "#ffffff47",
+        background: "#00000052",
         listStyleType:"none",
         
   }}></li>

@@ -2,10 +2,11 @@ import { AppBar, Toolbar, Container } from "@mui/material";
 import NavBarLeftBox from './NavBarLeftBox/NavBarLeftBox';
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
 import Logo from "./Logo/Logo";
+import theme from '../../styles/theme'
 
 const NavBar = () => {
   return (
-    <AppBar>
+    <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}}>
     <Container>
       <Toolbar>
         <NavBarLeftBox />
