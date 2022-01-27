@@ -6,7 +6,6 @@ import theme from '../../styles/theme'
 
 const NavBar = () => {
   return (
-      <Box>
         <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}}>
           <Container>
             <Toolbar>
@@ -16,8 +15,6 @@ const NavBar = () => {
             </Toolbar>
           </Container>
         </AppBar>
-      </Box>
-
   );
 };
 

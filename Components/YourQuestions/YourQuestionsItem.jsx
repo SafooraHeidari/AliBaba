@@ -5,28 +5,28 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import styled from "@emotion/styled";
 import theme from "../../styles/theme";
-import {AccordionDetails} from "@mui/material";
+import {Accordion, AccordionDetails, Typography} from "@mui/material";
 
 const MyAccordion = styled('Accordion')({
     borderRadius:'5px',
     direction:'rtl',
     marginBottom: '1rem'
 })
-const QuestionMark = styled('QuestionMarkOutlinedIcon')({
-    margin:'.8rem',
-    width:'30px',
-    height:'30px',
-    borderRadius:'50%',
-    backgroundColor:theme.palette.info.main,
-    color:theme.palette.info.four
-})
-const TypographyTitle = styled('Typography')({
-    color:theme.palette.gray.five,
-    flexShrink: 0,
-    paddingY:'.8rem',
-    fontSize:'1.25rem',
-    fontWeight: '700'
-})
+// const QuestionMark = styled('QuestionMarkOutlinedIcon')({
+//     margin:'.8rem',
+//     width:'30px',
+//     height:'30px',
+//     borderRadius:'50%',
+//     backgroundColor:theme.palette.info.main,
+//     color:theme.palette.info.four
+// })
+// const TypographyTitle = styled('Typography')({
+//     color:theme.palette.gray.five,
+//     flexShrink: 0,
+//     paddingY:'.8rem',
+//     fontSize:'1.25rem',
+//     fontWeight: '700'
+// })
 const TypographyDescription = styled('Typography')({
     color:theme.palette.gray.four,
     fontSize:'1rem',
@@ -40,18 +40,29 @@ export default function YourQuestionsItem({title, description}){
         setExpanded(isExpanded ? panel : false);
     };
     return(
-        <MyAccordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Accordion sx={{borderRadius:'5px',
+            direction:'rtl',
+            marginBottom: '1rem'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1bh-content"
                 id="panel1bh-header">
-                <QuestionMark/>
-                <TypographyTitle>{title}</TypographyTitle>
+                <QuestionMarkOutlinedIcon sx={{margin:'.8rem',
+                    width:'30px',
+                    height:'30px',
+                    borderRadius:'50%',
+                    backgroundColor:theme.palette.info.main,
+                    color:theme.palette.info.four}}/>
+                <Typography sx={{color:theme.palette.gray.five,
+                    flexShrink: 0,
+                    paddingY:'.8rem',
+                    fontSize:'1.25rem',
+                    fontWeight: '700'}}>{title}</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <TypographyDescription>{description}</TypographyDescription>
             </AccordionDetails>
-        </MyAccordion>
+        </Accordion>
     )
 
 }
