@@ -94,7 +94,7 @@ const theme = createTheme({
             tablet: 640,
             laptop: 1024
         },
-},
+    },
     typography: {
         "fontFamily": "Alibaba",
     }});
