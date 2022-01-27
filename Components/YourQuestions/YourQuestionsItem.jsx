@@ -1,10 +1,11 @@
 import {useState} from "react";
-import AccordionDetails from "@mui/material/AccordionDetails";
+
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import styled from "@emotion/styled";
 import theme from "../../styles/theme";
+import {AccordionDetails} from "@mui/material";
 
 const MyAccordion = styled('Accordion')({
     borderRadius:'5px',

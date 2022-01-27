@@ -3,6 +3,7 @@ import theme from "../styles/theme";
 import { ThemeProvider } from "@emotion/react";
 import NavBar from "../Components/NavBar/NavBar";
 import RecentSearch from "../Components/RecentSearch/RecentSearch";
+import YourQuestions from "../Components/YourQuestions/YourQuestions";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
 
           <NavBar />
           <RecentSearch/>
+          <YourQuestions/>
 
         <Box>// pre-footer // footer</Box>
       </Box>
