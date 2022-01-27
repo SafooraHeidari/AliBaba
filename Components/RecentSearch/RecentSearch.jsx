@@ -7,7 +7,7 @@ import theme from "../../styles/theme";
 
 function RecentSearch(){
     return (
-        <div>
+        <Box>
             <Card sx={{ padding: 1, width: 160, height:70.8,display:'flex',flexDirection:'column'}}>
                 <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                     <Typography sx={{fontFamily:'Alibaba',marginX: 1,fontSize: 14}}>تهران</Typography>
@@ -19,7 +19,7 @@ function RecentSearch(){
                     <Typography sx={{fontFamily:'Alibaba',marginX: 1,fontSize: 14}}>20 بهمن</Typography>
                 </Box>
             </Card>
-        </div>
+        </Box>
     )
 }
 export default RecentSearch
