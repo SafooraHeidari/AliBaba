@@ -11,8 +11,11 @@ export default function Home() {
 
             <Box>
                 <NavBar/>
-                <RecentSearch/>
-                <YourQuestions/>
+                <Container>
+                    <RecentSearch/>
+                    <YourQuestions/>
+                </Container>
+
 
                     <Footer/>
             </Box>
