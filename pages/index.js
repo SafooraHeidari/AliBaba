@@ -1,6 +1,7 @@
 
 import {Box, Container} from "@mui/material";
 import theme from "../styles/theme";
+import Footer from '../Components/Footer/Footer'
 import {ThemeProvider} from "@emotion/react";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
             </ThemeProvider>
             <Box>
                 // pre-footer
-                // footer
+                <Footer/>
             </Box>
         </Box>
     )
