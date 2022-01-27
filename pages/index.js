@@ -1,26 +1,21 @@
-import {Box, Container} from "@mui/material";
+import { Box, Container } from "@mui/material";
 import theme from "../styles/theme";
-import {ThemeProvider} from "@emotion/react";
-import RecentSearch from "../Components/RecentSearch/RecentSearch";
+import { ThemeProvider } from "@emotion/react";
+import NavBar from "../Components/NavBar/NavBar";
 
 export default function Home() {
-    return (
-        <ThemeProvider theme={theme}>
+  return (
+    <ThemeProvider theme={theme}>
+      <Box>
         <Box>
-            <Box>
-                // NavBar
-            </Box>
-
-                <Container sx={{backgroundColor: theme.palette.bg.main}}>
-                    //body
-                    <RecentSearch/>
-                </Container>
-            <Box>
-                // pre-footer
-                // footer
-            </Box>
+          <NavBar />
         </Box>
-        </ThemeProvider>
+        <Container sx={{ backgroundColor: theme.palette.success.three }}>
+          //body
+        </Container>
 
-    )
+        <Box>// pre-footer // footer</Box>
+      </Box>
+    </ThemeProvider>
+  );
 }
