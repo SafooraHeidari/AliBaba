@@ -6,7 +6,7 @@ import theme from '../../styles/theme'
 
 const NavBar = () => {
   return (
-        <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}}>
+        <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}} position="sticky">
           <Container>
             <Toolbar>
               <NavBarLeftBox />

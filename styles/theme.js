@@ -96,7 +96,7 @@ const theme = createTheme({
         },
 },
     typography: {
-        "fontFamily": "Alibaba",
+        fontFamily: "Alibaba",
     }});
 
 export default theme;
