@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.1",
     "next": "^12.0.8",
@@ -17,6 +18,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@mui/lab": "^5.0.0-alpha.66",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8"
   }
