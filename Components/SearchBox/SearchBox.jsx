@@ -14,6 +14,7 @@ import Residence from "../../styles/assest/Icons/Residence";
 import Tour from "../../styles/assest/Icons/Tour";
 import Bus from "../../styles/assest/Icons/Bus";
 import Train from "../../styles/assest/Icons/Train";
+import DomesticPlaneTabPanel from "./DomesticPlaneTabPanel";
 
 
 // const SearchContainer = styled('Container')({
@@ -38,9 +39,9 @@ export default function SearchBox(){
             boxShadow:'0 2px 1px -1px theme.palette.shadowButton.main',border: 'solid 1px theme.palette.border1.main'}}>
 
 
-            <TabContext value={value}>
+            <TabContext sx={{direction:'rtl'}} value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor="secondary" indicatorColor="secondary"
+                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor={theme.palette.success.five}
                              aria-label="secondary tabs example" centered>
                         <Tab icon={<DomesticPlanes/>} label="پرواز داخلی" value="1" />
                         <Tab icon={<ForeignPlanes/>} label="پرواز خارجی" value="2" />
@@ -51,13 +52,13 @@ export default function SearchBox(){
                         <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7" />
                     </TabList>
                 </Box>
-                <TabPanel value="1">Item One</TabPanel>
-                <TabPanel value="2">Item Two</TabPanel>
-                <TabPanel value="3">Item Three</TabPanel>
-                <TabPanel value="4">Item Three</TabPanel>
-                <TabPanel value="5">Item Three</TabPanel>
-                <TabPanel value="6">Item Three</TabPanel>
-                <TabPanel value="7">Item Three</TabPanel>
+                <TabPanel value="1"><DomesticPlaneTabPanel/></TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="2">Item Two</TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="3">Item Three</TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="4">Item Three</TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="5">Item Three</TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="6">Item Three</TabPanel>
+                <TabPanel sx={{direction:'rtl'}} value="7">Item Three</TabPanel>
             </TabContext>
 
 
