@@ -10,7 +10,7 @@ import Advertise from './../Components/Advertise/Advertise'
 export default function Home() {
     return (
             <Box>
-                <ThemeProvider theme={theme}>
+                
                 <NavBar/>
                 <Container>
                     <RecentSearch/>
@@ -20,7 +20,7 @@ export default function Home() {
 
 
                     <Footer/>
-                </ThemeProvider>
+               
             </Box>
 
 
