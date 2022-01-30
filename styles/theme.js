@@ -88,12 +88,17 @@ const theme = createTheme({
             main : 'rgba(10, 11, 12, .65)',
          } ,
     },
+    
     breakpoints: {
         values: {
             mobile: 0,
             tablet: 640,
             laptop: 1024
         },
-}});
+        
+},
+    typography: {
+    "fontFamily": "Alibaba",},
+});
 
 export default theme;
