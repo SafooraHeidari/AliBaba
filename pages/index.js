@@ -5,7 +5,7 @@ import {ThemeProvider} from "@emotion/react";
 import NavBar from "../Components/NavBar/NavBar";
 import RecentSearch from "../Components/RecentSearch/RecentSearch";
 import YourQuestions from "../Components/YourQuestions/YourQuestions";
-import Plane_Ticket from "../Components/Plane_Ticket/Plane_Ticket";
+import PlaneTicket from "../Components/PlaneTicket/PlaneTicket";
 
 export default function Home() {
     return (
@@ -15,7 +15,7 @@ export default function Home() {
                 <Container>
                     <RecentSearch/>
                     <YourQuestions/>
-                    <Plane_Ticket />
+                    <PlaneTicket />
                 </Container>
 
 
