@@ -5,11 +5,23 @@ import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
 import Route from "../../styles/assest/Icons/Route";
 import BottomPanel from "./BottomPanel";
+import {styled} from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+
+const MyChip = styled(Chip)(({ theme }) => ({
+    fontFamily: 'Alibaba',
+    fontSize: '12px',
+    fontWeight: '400',
+    margin: 5,
+    color: '#2B2F33',
+    backgroundColor: '#F8FAFB'
+}));
+
 
 export default function RightSidePanel() {
     return(
         <Box sx={{display: 'flex', flexDirection: 'row'}}>
-            <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft:'10px'}}>
+            <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin:'15px'}}>
                 <Avatar
                     sx={{width: 48, height: 48, border: '1px solid rgba(0, 0, 0, .1)', padding: 1, marginY: 1}}
                     src="https://cdn.alibaba.ir/static/img/airlines/Domestic/NV.png"/>
@@ -17,33 +29,9 @@ export default function RightSidePanel() {
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', flexGrow: '1', alignItems: 'start'}}>
                 <Stack direction="row">
-                    <Chip sx={{
-                        fontFamily: 'Alibaba',
-                        fontSize: '12px',
-                        fontWeight: '400',
-                        marginX: '5px',
-                        marginY: '10px',
-                        color: '#2B2F33',
-                        backgroundColor: '#F8FAFB'
-                    }} size="small" label="سیستمی"/>
-                    <Chip sx={{
-                        fontFamily: 'Alibaba',
-                        fontSize: '12px',
-                        fontWeight: '400',
-                        marginX: '5px',
-                        marginY: '10px',
-                        color: '#2B2F33',
-                        backgroundColor: '#F8FAFB'
-                    }} size="small" label="اکونومی"/>
-                    <Chip sx={{
-                        fontFamily: 'Alibaba',
-                        fontSize: '12px',
-                        fontWeight: '400',
-                        marginX: '5px',
-                        marginY: '10px',
-                        color: '#2B2F33',
-                        backgroundColor: '#F8FAFB'
-                    }} size="small" label="fokker 100"/>
+                    <MyChip size="small" label="سیستمی"/>
+                    <MyChip size="small" label="اکونومی"/>
+                    <MyChip size="small" label="fokker 100"/>
                 </Stack>
                 <Stack direction="row">
                     <Typography

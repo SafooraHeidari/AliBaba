@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid';
 import Divider from "@mui/material/Divider";
-
 import RightSidePanel from "./RightSidePanel";
 import LeftSidePanel from "./LeftSidePanel";
 import BottomPanel from "./BottomPanel";
+import { styled } from "@mui/material/styles";
 
 export default function SearchCard() {
     return (

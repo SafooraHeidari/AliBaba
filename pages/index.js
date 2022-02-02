@@ -16,7 +16,7 @@ export default function Home() {
 
             {/*<Container sx={{ backgroundColor: theme.palette.success.three }}>*/}
              //body
-                <BottomPanel/>
+                <SearchCard/>
             {/*</Container>*/}
 
             <Box>
