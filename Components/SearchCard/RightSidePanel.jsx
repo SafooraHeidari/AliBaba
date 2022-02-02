@@ -5,21 +5,24 @@ import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
 import Route from "../../styles/assest/Icons/Route";
 import BottomPanel from "./BottomPanel";
-import {styled} from "@mui/material/styles";
+import {styled, ThemeProvider} from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
+import theme from '../../styles/theme'
+
 
 const MyChip = styled(Chip)(({ theme }) => ({
     fontFamily: 'Alibaba',
     fontSize: '12px',
     fontWeight: '400',
     margin: 5,
-    color: '#2B2F33',
-    backgroundColor: '#F8FAFB'
+    color: theme.palette.gray.six,//'#2B2F33',
+    backgroundColor: theme.palette.gray.main
 }));
 
 
 export default function RightSidePanel() {
     return(
+        <ThemeProvider theme={theme}>
         <Box sx={{display: 'flex', flexDirection: 'row'}}>
             <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin:'15px'}}>
                 <Avatar
@@ -37,15 +40,16 @@ export default function RightSidePanel() {
                     <Typography
                         sx={{fontFamily: 'Alibaba', fontSize: '16px', fontWeight: '400', margin: '5px'}}> اهواز</Typography>
                     <Typography
-                        sx={{fontFamily: 'Alibaba', fontSize: '20px', fontWeight: '700'}}>06:10</Typography>
+                        sx={{fontFamily: 'Alibaba', fontSize: '20px', fontWeight: '700'}}>۰۶:۱۰</Typography>
                     <Route/>
                     <Typography
                         sx={{fontFamily: 'Alibaba', fontSize: '16px', fontWeight: '400', margin: '5px'}}>تهران</Typography>
                     <Typography
-                        sx={{fontFamily: 'Alibaba', fontSize: '20px', fontWeight: '700'}}>07:15</Typography>
+                        sx={{fontFamily: 'Alibaba', fontSize: '20px', fontWeight: '700'}}>۰۷:۱۵</Typography>
                 </Stack>
             </Box>
 
         </Box>
+        </ThemeProvider>
     )
 }
