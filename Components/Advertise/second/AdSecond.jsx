@@ -21,7 +21,7 @@ const styles={
         height:'300px',
     },
     img:{
-        backgroundColor:'white',width:'100%',height:'80%',borderRadius:'7px',
+        backgroundColor:'white',width:'100%',height:'75%',borderRadius:'7px',
         backgroundRepeat: 'no-repeat',backgroundSize: 'cover'
     }
 }

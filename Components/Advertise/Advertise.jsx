@@ -7,6 +7,9 @@ import AdRight from "./AdRight";
 import AdLeft from "./AdLeft";
 import AdSecond from "./second/AdSecond";
 import AdThird from "./third/AdThird";
+import {ThemeProvider} from "@emotion/react";
+import theme from "../../styles/theme";
+
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -17,6 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const Advertise = () => {
   return (
     <>
+    <ThemeProvider theme={theme}>
       <Grid container spacing={1}>
         <Grid sx={{ width: "50%" }} item xs={6}>
           <Item sx={{ padding: "0", borderRadius: ".5rem" }}>
@@ -35,6 +39,7 @@ const Advertise = () => {
       <Box sx={{marginTop:'2rem',marginBottom:'5rem'}}>
         <AdThird/>
       </Box>
+    </ThemeProvider>
     </>
   );
 };
