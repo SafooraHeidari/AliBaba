@@ -4,6 +4,8 @@ import theme from "../styles/theme";
 import {ThemeProvider} from "@emotion/react";
 import SearchBox from "../Components/SearchBox/SearchBox";
 import SearchCard from "../Components/SearchCard/SearchCard";
+import BottomPanel from "../Components/SearchCard/BottomPanel";
+import RightSidePanel from "../Components/SearchCard/RightSidePanel";
 
 export default function Home() {
     return (
@@ -14,7 +16,7 @@ export default function Home() {
 
             {/*<Container sx={{ backgroundColor: theme.palette.success.three }}>*/}
              //body
-                <SearchCard/>
+                <BottomPanel/>
             {/*</Container>*/}
 
             <Box>
