@@ -7,27 +7,26 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import TabPanel from "@mui/lab/TabPanel";
 import {useState} from "react";
 import {Box, Button, Typography} from "@mui/material";
+import Tabs from "@mui/material/Tabs";
 
 export default function BottomPanel() {
 
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState('one');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
     return (
-        <Box>
-            {/*<TabContext value={value}>*/}
-            {/*    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>*/}
-            {/*        <TabList onChange={handleChange} aria-label="lab API tabs example">*/}
-            {/*            <Tab sx={{fontFamily: 'Alibaba'}} label="اطلاعات پرواز" value="1" />*/}
-            {/*            <Tab sx={{fontFamily: 'Alibaba'}} label="قوانین استرداد" value="2" />*/}
-            {/*        </TabList>*/}
-            {/*    </Box>*/}
-            {/*    <TabPanel value="1">Item One</TabPanel>*/}
-            {/*    <TabPanel value="2">Item Two</TabPanel>*/}
-            {/*</TabContext>*/}
+        <Box sx={{ width: '100%' }}>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                textColor="secondary"
+                indicatorColor="secondary"
+                aria-label="secondary tabs example"
+            >
+                <Tab sx={{fontFamily: 'Alibaba'}} label="اطلاعات پرواز" value="one" />
+                <Tab sx={{fontFamily: 'Alibaba'}} label="قوانین استرداد" value="two" />
+            </Tabs>
         </Box>
-
-
     )
 }

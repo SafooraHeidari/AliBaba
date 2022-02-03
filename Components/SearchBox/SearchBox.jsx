@@ -5,6 +5,7 @@ import theme from "../../styles/theme";
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
+import Tabs from '@mui/material/Tabs';
 import TabPanel from '@mui/lab/TabPanel';
 import {useState} from "react";
 import DomesticPlanes from "../../styles/assest/Icons/DomesticPlanes"
@@ -41,8 +42,9 @@ export default function SearchBox(){
 
             <TabContext sx={{direction:'rtl'}} value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor={theme.palette.success.five}
-                             aria-label="secondary tabs example" centered>
+                    <Tabs onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five}
+                          indicatorColor="secondary"
+                          aria-label="secondary tabs example" centered>
                         <Tab icon={<DomesticPlanes/>} label="پرواز داخلی" value="1" />
                         <Tab icon={<ForeignPlanes/>} label="پرواز خارجی" value="2" />
                         <Tab icon={<Train/>} label="قطار" value="3" />
@@ -50,7 +52,7 @@ export default function SearchBox(){
                         <Tab icon={<Tour/>} label="تور" value="5" />
                         <Tab icon={<Hotel/>} label="هتل" value="6" />
                         <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7" />
-                    </TabList>
+                    </Tabs>
                 </Box>
                 <TabPanel value="1"><DomesticPlaneTabPanel/></TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="2">Item Two</TabPanel>
