@@ -1,4 +1,4 @@
-import { Typography, Box, Grid, Button } from "@mui/material";
+import { Typography, Box, Link } from "@mui/material";
 import { fontSize } from "@mui/system";
 import { styled } from "@mui/material/styles";
 import theme from "../../styles/theme";
@@ -11,8 +11,8 @@ const styles = {
     fontWeight: "400",
     lineHeight: "2.3",
     color: theme.palette.gray.five,
-    paddingTop:"1rem",
-    paddingButton:"1rem"
+    paddingTop: "1rem",
+    paddingButton: "1rem",
   },
   title: {
     fontFamily: "Alibaba",
@@ -20,8 +20,8 @@ const styles = {
     direction: "rtl",
     fontWeight: "900",
     textAlign: "right",
-    paddingTop:"1rem",
-    paddingButton:"1rem"
+    paddingTop: "1rem",
+    paddingButton: "1rem",
   },
 };
 
@@ -30,20 +30,24 @@ export default function PlaneTicket() {
     <>
       <Box>
         <Box display={"flex"}>
-        <Box sx={{mt:'3rem'}}>
+          <Box sx={{ mt: "3rem" }}>
             <img
               src="https://cdn.alibaba.ir/h/desktop/assets/images/baggage/baggage@3x-bda919ec.webp"
-              width={"76%"} 
+              width={"76%"}
             />
           </Box>
           <Box width={"115%"}>
-            <Typography variant="h1" sx={{
-              fontFamily: "Alibaba",
-              fontSize: "1.25rem",
-              direction: "rtl",
-              fontWeight: "900",
-              textAlign: "right",
-              }} >
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: "Alibaba",
+                fontSize: "1.25rem",
+                direction: "rtl",
+                fontWeight: "900",
+                textAlign: "right",
+                // paddingTop:"4rem"
+              }}
+            >
               بلیط هواپیما
             </Typography>
             <Typography style={styles.text} sx={{ py: 2 }}>
@@ -61,15 +65,18 @@ export default function PlaneTicket() {
               شما با خرید بلیط هواپیما از علی‌بابا با سامانه مطمئن و معتبری
               روبه‌رو هستید که تمام نیازهایتان را پاسخ می‌دهد. برای خرید آنلاین
               بلیط هواپیما در علی‌بابا کافیست مبدا، مقصد و تاریخ پرواز خود را
-              انتخاب کنید. پس از کلیک روی جستجو، لیست قیمت بلیط هواپیما به مقصد
-              مورد نظر شما ظاهر می‌شود. در این لیست، انتخابهای متعددی پیش روی
-              شماست. برای اینکه گزینه‌ ها را برای خرید بلیط هواپیما محدودتر
-              کنید، علی‌بابا ابزارهای مختلفی در اختیار شما می‌گذارد.
+              انتخاب کنید. پس از کلیک روی جستجو، لیست
+              <Link href="#" underline="none">
+                {" قیمت بلیط هواپیما "}
+              </Link>
+              به مقصد مورد نظر شما ظاهر می‌شود. در این لیست، انتخابهای متعددی
+              پیش روی شماست. برای اینکه گزینه‌ ها را برای خرید بلیط هواپیما
+              محدودتر کنید، علی‌بابا ابزارهای مختلفی در اختیار شما می‌گذارد.
             </Typography>
           </Box>
         </Box>
         <Box>
-          <Typography style={styles.text}>
+          <Typography style={styles.text} sx={{fontSize:"0.85rem"}}>
             یکی از ابزارهای بسیار مفید و کاربردی برای خرید اینترنتی بلیط
             هواپیما، تقویم قیمتی است. با استفاده از تقویم قیمتی شما می‌توانید
             کمترین و بیشترین قیمت بلیط پرواز را در روزهای قبل و بعد از آن تاریخ
@@ -80,11 +87,17 @@ export default function PlaneTicket() {
 
           <Typography style={styles.text}>
             علاوه بر این، با استفاده از فیلترهای کنار صفحه می‌توانید ایرلاین
-            مورد نظرتان را انتخاب کنید. ضمنا می‌توانید، بلیط چارتر هواپیما یا
-            سیستمی را فعال کنید تا فقط یکی از این دو نوع بلیط را مشاهده کنید.
-            بلیط هواپیما خارجی ،کلاس پروازی و زمان پرواز هم از دیگر گزینه‌هایی
-            است که با انتخاب آنها، تعداد بلیط ها محدودتر و رزرو بلیط هواپیما
-            برای شما آسانتر می‌شود.
+            مورد نظرتان را انتخاب کنید. ضمنا می‌توانید،
+            <Link href="#" underline="none">
+              {" بلیط چارتر هواپیما "}
+            </Link>
+            یا سیستمی را فعال کنید تا فقط یکی از این دو نوع بلیط را مشاهده کنید.
+            <Link href="#" underline="none">
+              {" بلیط هواپیما خارجی "}
+            </Link>
+            ،کلاس پروازی و زمان پرواز هم از دیگر گزینه‌هایی است که با انتخاب
+            آنها، تعداد بلیط ها محدودتر و رزرو بلیط هواپیما برای شما آسانتر
+            می‌شود.
           </Typography>
 
           <Typography style={styles.text}>
