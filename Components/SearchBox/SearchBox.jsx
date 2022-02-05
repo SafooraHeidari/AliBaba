@@ -1,4 +1,5 @@
-import {Box, Container, Divider, Paper, Stack, Typography} from "@mui/material";
+import {Box, Container} from "@mui/material";
+import Tabs from "@mui/material/Tabs";
 import styled from "@emotion/styled";
 import theme from "../../styles/theme";
 
@@ -37,11 +38,12 @@ export default function SearchBox(){
     return(
         <Container sx={{height:'265px', width:'1200px',backgroundColor:theme.palette.white.main,borderRadius:'8px',
             boxShadow:'0 2px 1px -1px theme.palette.shadowButton.main',border: 'solid 1px theme.palette.border1.main'}}>
+            <Box sx={{ width: '100%', typography: 'body1' }}>
 
-
-            <TabContext sx={{direction:'rtl'}} value={value}>
+            <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor={theme.palette.success.five}
+
+                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor='red'
                              aria-label="secondary tabs example" centered>
                         <Tab icon={<DomesticPlanes/>} label="پرواز داخلی" value="1" />
                         <Tab icon={<ForeignPlanes/>} label="پرواز خارجی" value="2" />
@@ -60,6 +62,7 @@ export default function SearchBox(){
                 <TabPanel sx={{direction:'rtl'}} value="6">Item Three</TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="7">Item Three</TabPanel>
             </TabContext>
+                </Box>
 
 
         </Container>
