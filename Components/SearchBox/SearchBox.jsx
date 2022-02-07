@@ -43,18 +43,17 @@ export default function SearchBox(){
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
 
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor='red'
-                             aria-label="secondary tabs example" centered>
-                        <Tab icon={<DomesticPlanes/>} label="پرواز داخلی" value="1" />
-                        <Tab icon={<ForeignPlanes/>} label="پرواز خارجی" value="2" />
-                        <Tab icon={<Train/>} label="قطار" value="3" />
-                        <Tab icon={<Bus/>} label="اتوبوس" value="4" />
-                        <Tab icon={<Tour/>} label="تور" value="5" />
-                        <Tab icon={<Hotel/>} label="هتل" value="6" />
-                        <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7" />
+                    <TabList sx={{height:'81px',marginTop:'9px'}} onChange={handleChange} textColor="secondary" indicatorColor='secondary' centered>
+                        <Tab icon={<DomesticPlanes/>} sx={{width:'140px'}} label="پرواز داخلی" value="1" />
+                        <Tab icon={<ForeignPlanes/>} sx={{width:'140px'}} label="پرواز خارجی" value="2" />
+                        <Tab icon={<Train/>} sx={{width:'140px'}} label="قطار" value="3" />
+                        <Tab icon={<Bus/>} sx={{width:'140px'}} label="اتوبوس" value="4" />
+                        <Tab icon={<Tour/>} sx={{width:'140px'}} label="تور" value="5" />
+                        <Tab icon={<Hotel/>} sx={{width:'140px'}} label="هتل" value="6" />
+                        <Tab icon={<Residence/>} sx={{width:'140px'}} label="ویلا و اقامتگاه" value="7" />
                     </TabList>
                 </Box>
-                <TabPanel value="1"><DomesticPlaneTabPanel/></TabPanel>
+                <TabPanel sx={{direction:'rtl',marginTop:'12px'}}value="1"><DomesticPlaneTabPanel/></TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="2">Item Two</TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="3">Item Three</TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="4">Item Three</TabPanel>

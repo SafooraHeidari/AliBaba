@@ -1,45 +1,58 @@
 
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import {Box, Button} from "@mui/material";
+import {Box, Button, InputAdornment} from "@mui/material";
 import Hotel from "../../styles/assest/Icons/Hotel";
 import DatePicker from "./MyDatePicker";
 import MyDatePicker from "./MyDatePicker";
 
-const optionsCity = ['تهران', 'اصفهان', 'شیراز', 'بندر عباس', 'اهواز'];
+const optionsCity = ['تهران', 'شیراز', 'مشهد'];
 const optionsNum = [1, 2, 3, 4];
+
+
+
+
+const sxFrom = {
+        "& .css-ekiabt-MuiInputBase-root-MuiOutlinedInput-root":{
+            borderRadius: '0 8px 8px 0',
+            height: '48px'
+        },
+        width:'229px',
+}
+
+const sxTo = {
+    "& .css-ekiabt-MuiInputBase-root-MuiOutlinedInput-root":{
+        borderRadius: '8px 0 0 8px',
+        height: '48px'
+    },
+    width:'229px',
+    marginLeft: '21px'
+}
+
 
 
 function DomesticPlaneTabPanel(){
     return(
 
-        <Box sx={{direction:'rtl',display:'flex',flexDirection:'row'}}>
-            <Autocomplete sx={{direction:'rtl', width:'20%'}}
+        <Box sx={{display:'flex',flexDirection:'row'}}>
+            <Autocomplete sx={sxFrom}
                           freeSolo
                 options={optionsCity}
-                renderInput={(params) => (<>
-                    <TextField sx={{direction:'rtl'}}
-                               {...params} label="مبدا (شهر)"/>
-                    </>
+                renderInput={(params) => (<TextField size="small" {...params} label="مبدا (شهر)"/>
                     )}
             />
-            <Autocomplete sx={{width:'20%'}}
+            <Autocomplete sx={sxTo}
                           freeSolo
                 options={optionsCity}
-                renderInput={(params) => <TextField {...params} label="مقصد (شهر)" />}
+                renderInput={(params) => <TextField size="small" {...params} label="مقصد (شهر)" />}
             />
             <MyDatePicker/>
-
-
-
-
-
             <Autocomplete sx={{width:'15%'}}
                 freeSolo
                 options={optionsNum}
                 renderInput={(params) => <TextField {...params} label="مسافران" />}
             />
-            <Button>جستجو</Button>
+            <Button variant="contained" sx={{width:'183px', height:'48px'}}>جستجو</Button>
 
         </Box>
     )
