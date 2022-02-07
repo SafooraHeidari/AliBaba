@@ -1,29 +1,28 @@
-
 import {Box, Container} from "@mui/material";
 import theme from "../styles/theme";
+import Footer from '../Components/Footer/Footer'
 import {ThemeProvider} from "@emotion/react";
-import SearchBox from "../Components/SearchBox/SearchBox";
-import SearchCard from "../Components/SearchCard/SearchCard";
-import BottomPanel from "../Components/SearchCard/BottomPanel";
-import RightSidePanel from "../Components/SearchCard/RightSidePanel";
-import All from "../Components/SearchCard/All";
+import NavBar from "../Components/NavBar/NavBar";
+import RecentSearch from "../Components/RecentSearch/RecentSearch";
+import YourQuestions from "../Components/YourQuestions/YourQuestions";
+import Advertise from './../Components/Advertise/Advertise'
 
 export default function Home() {
     return (
-        <Box>
             <Box>
-                // NavBar
+
+                <NavBar/>
+                <Container>
+                    <RecentSearch/>
+                    <Advertise/>
+                    <YourQuestions/>
+                </Container>
+
+
+                    <Footer/>
+
             </Box>
 
-            {/*<Container sx={{ backgroundColor: theme.palette.success.three }}>*/}
-             //body
-                <All/>
-            {/*</Container>*/}
 
-            <Box>
-                // pre-footer
-                // footer
-            </Box>
-        </Box>
     )
 }
