@@ -17,10 +17,10 @@ const theme = createTheme({
             dark: '#DB9A02',
         },
         secondary: {
-           four: '#F2F9FF',
+          one: '#F2F9FF',
             two: '#C9E3F8',
-            three: '#51A2E7',
-            main: '#0077DB',
+            three : '#51A2E7',
+           main: '#0077DB',
             five: '#00569E',
             six: '#004075',
             seven: '#001C33',
@@ -88,15 +88,16 @@ const theme = createTheme({
             main : 'rgba(10, 11, 12, .65)',
          } ,
     },
+    
     breakpoints: {
         values: {
             mobile: 0,
             tablet: 640,
             laptop: 1024
         },
-    },
-    typography: {
-        "fontFamily": "Alibaba",
-    }});
 
+},
+    typography: {
+        fontFamily: "Alibaba",
+    }});
 export default theme;
