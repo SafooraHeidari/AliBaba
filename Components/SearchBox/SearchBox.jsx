@@ -15,17 +15,7 @@ import Residence from "../../styles/assest/Icons/Residence";
 import Tour from "../../styles/assest/Icons/Tour";
 import Bus from "../../styles/assest/Icons/Bus";
 import Train from "../../styles/assest/Icons/Train";
-import DomesticPlaneTabPanel from "./DomesticPlaneTabPanel";
-
-
-// const SearchContainer = styled('Container')({
-//     height:'265px',
-//     width:'1200px',
-//     backgroundColor:theme.palette.white.main,
-//     borderRadius:'8px',
-//     boxShadow:'0 2px 1px -1px theme.palette.shadowButton.main',
-//     border: 'solid 1px theme.palette.border1.main'
-// })
+import DomesticPlaneTabPanel from "./DometicPlaneTabPanel/DomesticPlaneTabPanel";
 
 export default function SearchBox(){
     const [value, setValue] = useState('1');
@@ -36,14 +26,11 @@ export default function SearchBox(){
 
 
     return(
-        <Container sx={{height:'265px', width:'1200px',backgroundColor:theme.palette.white.main,borderRadius:'8px',
-            boxShadow:'0 2px 1px -1px theme.palette.shadowButton.main',border: 'solid 1px theme.palette.border1.main'}}>
-
-
+        <Container sx={{direction:'rtl', height:'265px', width:'1200px',borderRadius:'8px',
+            boxShadow:'0 2px 1px -1px rgba(0, 0, 0, .08)' ,border: 'solid 1px rgba(0, 0, 0, .1)'}}>
             <TabContext sx={{direction:'rtl'}} value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" textColor={theme.palette.success.five} indicatorColor={theme.palette.success.five}
-                             aria-label="secondary tabs example" centered>
+                    <TabList onChange={handleChange} textColor="secondary" indicatorColor="secondary" centered>
                         <Tab icon={<DomesticPlanes/>} label="پرواز داخلی" value="1" />
                         <Tab icon={<ForeignPlanes/>} label="پرواز خارجی" value="2" />
                         <Tab icon={<Train/>} label="قطار" value="3" />
