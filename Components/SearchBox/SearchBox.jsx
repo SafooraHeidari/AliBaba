@@ -15,7 +15,8 @@ import Residence from "../../styles/assest/Icons/Residence";
 import Tour from "../../styles/assest/Icons/Tour";
 import Bus from "../../styles/assest/Icons/Bus";
 import Train from "../../styles/assest/Icons/Train";
-import DomesticPlaneTabPanel from "./DometicPlaneTabPanel/DomesticPlaneTabPanel";
+import DomesticFlightTabPanel from "./DomesticFlightTabPanel/DomesticFlightTabPanel";
+import ForeignFlightTabPanel from "./ForeignPlaneTabPanel/ForeignFlightTabPanel"
 
 export default function SearchBox(){
     const [value, setValue] = useState('1');
@@ -40,8 +41,8 @@ export default function SearchBox(){
                         <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7" />
                     </TabList>
                 </Box>
-                <TabPanel value="1"><DomesticPlaneTabPanel/></TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="2">Item Two</TabPanel>
+                <TabPanel value="1"><DomesticFlightTabPanel/></TabPanel>
+                <TabPanel value="2"><ForeignFlightTabPanel/></TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="3">Item Three</TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="4">Item Three</TabPanel>
                 <TabPanel sx={{direction:'rtl'}} value="5">Item Three</TabPanel>

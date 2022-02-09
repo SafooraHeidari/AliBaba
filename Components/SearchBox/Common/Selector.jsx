@@ -5,12 +5,24 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
-const options = [
-    'یک طرفه',
-    'رفت و برگشت',
-];
+const styles = {
+    new: {
 
-export default function FlightMode2 () {
+        width: '110px',
+            height: '40px',
+            borderRadius: '15px',
+            border: 'solid 1px gray',
+            padding: '0px',
+        '&:hover':{
+        border:'solid 2px blue',
+        },
+        "& .css-1j6ebxq-MuiTypography-root":{
+            fontSize: '14px',
+        }
+    }
+}
+
+export default function Selector (props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(0);
     const open = Boolean(anchorEl);
@@ -30,12 +42,15 @@ export default function FlightMode2 () {
     return (
         <div>
             <List
+
+
                 component="nav"
                 aria-label="Device settings"
-                sx={{ bgcolor: 'background.paper', width: '200px' }}
+
             >
                 <ListItem
                     button
+                    sx={styles.new}
                     id="lock-button"
                     aria-haspopup="listbox"
                     aria-controls="lock-menu"
@@ -44,27 +59,29 @@ export default function FlightMode2 () {
                     onClick={handleClickListItem}
                 >
                     <ListItemText
-                        primary={options[selectedIndex]}
+
+                        primary={props.options[selectedIndex]}
                     />
                 </ListItem>
             </List>
             <Menu
+
                 id="lock-menu"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
                 MenuListProps={{
-                    'aria-labelledby': 'lock-button',
+
                     role: 'listbox',
                 }}
             >
-                {options.map((option, index) => (
+                {props.options.map((option, index) => (
                     <MenuItem
                         key={option}
-                        disabled={index === 0}
+
+
                         selected={index === selectedIndex}
-                        onClick={(event) => handleMenuItemClick(event, index)}
-                    >
+                        onClick={(event) => handleMenuItemClick(event, index)}>
                         {option}
                     </MenuItem>
                 ))}
