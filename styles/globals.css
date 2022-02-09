@@ -1,3 +1,6 @@
+:root{
+  --swiper-navigation-size: 10px !important;
+}
 html,
 body{
   padding: 0;
@@ -33,4 +36,5 @@ a {
 }
 .swiper-button-next:hover {
   color: #51a2e7 !important;
+  margin: 0  5px;
 }
