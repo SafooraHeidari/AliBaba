@@ -15,7 +15,7 @@ export default function Home() {
                 <Container>
                     <RecentSearch/>
                     <Advertise/>
-                    <YourQuestions/>
+                    <YourQuestions/> 
                 </Container>
 
 
