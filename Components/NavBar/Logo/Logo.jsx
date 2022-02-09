@@ -24,7 +24,7 @@ const Logo = () => {
         </Typography> */}
       <Image style={{width:"6rem"}} src={SvgTypo} alt={"alibaba.ir"}/>
 
-        <Typography style={{fontSize:"0.6rem"}} variant="h6" color="inherit" component="div">
+        <Typography sx={{color:"black",fontFamily:'Alibaba',fontSize:"0.6rem"}} variant="h6" color="inherit" component="div">
           خرید بلیط،هتل،تور
         </Typography>
       </Box>

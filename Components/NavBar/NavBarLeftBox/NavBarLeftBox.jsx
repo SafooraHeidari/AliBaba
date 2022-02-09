@@ -4,10 +4,10 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 const NavBarLeftBox = () => {
   return (
   <Box sx={{ flexGrow: 1 }}>
-    <Button color="inherit" endIcon={<PersonOutlineIcon />}>
+    <Button sx={{color:"black",fontFamily:'Alibaba'}} endIcon={<PersonOutlineIcon />}>
       {"ورود یا ثبت نام"}
     </Button>
-    <Button color="inherit" endIcon={<ReceiptLongIcon />}>
+    <Button sx={{color:"black",fontFamily:'Alibaba'}}  endIcon={<ReceiptLongIcon />}>
       {"پیگیری خرید"}
     </Button>
   </Box>

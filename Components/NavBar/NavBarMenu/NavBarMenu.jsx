@@ -19,15 +19,15 @@ const NavBarMenu = () => {
     <Box sx={{ display: { xs: "none", md: "flex" } }}>
       <MoreOptionsMenu />
       <Dvider />
-      <Button color="inherit">{"قطار"}</Button>
+      <Button sx={{color:"black",fontFamily:'Alibaba'}}>{"قطار"}</Button>
       <Dvider />
-      <Button color="inherit">{"اتوبوس"}</Button>
+      <Button sx={{color:"black",fontFamily:'Alibaba'}}>{"اتوبوس"}</Button>
       <Dvider />
-      <Button color="inherit">{"تور"}</Button>
+      <Button sx={{color:"black",fontFamily:'Alibaba'}}>{"تور"}</Button>
       <Dvider />
-      <Button color="inherit">{"هتل"}</Button>
+      <Button sx={{color:"black",fontFamily:'Alibaba'}}>{"هتل"}</Button>
       <Dvider />
-      <Button color="inherit">{"ویلا و اقامتگاه"}</Button>
+      <Button sx={{color:"black",fontFamily:'Alibaba'}}>{"ویلا و اقامتگاه"}</Button>
       <Dvider />
       <FlightMenu />
     </Box>

@@ -17,6 +17,10 @@ a {
   box-sizing: border-box;
 }
 
+.MuiGrid-container > .MuiDivider-vertical.MuiDivider-flexItem {
+  margin-right: -1px;
+}
+
 @font-face {
   font-family: 'Alibaba';
   font-style: normal;

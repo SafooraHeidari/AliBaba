@@ -10,14 +10,19 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.1",
+    "@mui/system": "^5.3.0",
     "next": "^12.0.8",
+    "persian-number": "^1.5.1",
     "react": "^17.0.2",
     "react-bootstrap-icons": "^1.7.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "swiper": "^7.4.1"
   },
   "devDependencies": {
+    "@mui/lab": "^5.0.0-alpha.66",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8"
   }

@@ -15,7 +15,7 @@ const MoreOptionsMenu = () => {
   return (
     <>
     <Button
-      color="inherit"
+      sx={{color:"black",fontFamily:'Alibaba'}}
       id="moreOptions-button"
       aria-controls={open ? "moreOptions-menu" : undefined}
       aria-haspopup="true"
@@ -26,6 +26,7 @@ const MoreOptionsMenu = () => {
       بیشتر
     </Button>
     <Menu
+    sx={{color:"black",fontFamily:'Alibaba'}}
       id="moreOptions-menu"
       anchorEl={anchorEl}
       open={open}
@@ -34,8 +35,8 @@ const MoreOptionsMenu = () => {
         "aria-labelledby": "moreOptions-button",
       }}
     >
-      <MenuItem onClick={handleClose}>علی بابا پلاس</MenuItem>
-      <MenuItem onClick={handleClose}>مجله علی بابا</MenuItem>
+      <MenuItem sx={{color:"black",fontFamily:'Alibaba'}} onClick={handleClose}>علی بابا پلاس</MenuItem>
+      <MenuItem sx={{color:"black",fontFamily:'Alibaba'}} onClick={handleClose}>مجله علی بابا</MenuItem>
     </Menu>
   </>
   )

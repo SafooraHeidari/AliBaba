@@ -16,7 +16,7 @@ const FlightMenu = () => {
   return (
     <>
       <Button
-        color="inherit"
+        sx={{color:"black",fontFamily:'Alibaba'}}
         id="flight-button"
         aria-controls={open ? "flight-menu" : undefined}
         aria-haspopup="true"
@@ -27,6 +27,7 @@ const FlightMenu = () => {
         پرواز
       </Button>
       <Menu
+      sx={{color:"black",fontFamily:'Alibaba'}}
         id="flight-menu"
         anchorEl={anchorEl}
         open={open}
@@ -35,8 +36,8 @@ const FlightMenu = () => {
           "aria-labelledby": "flight-button",
         }}
       >
-        <MenuItem onClick={handleClose}>پرواز داخلی</MenuItem>
-        <MenuItem onClick={handleClose}>پرواز خارجی</MenuItem>
+        <MenuItem sx={{color:"black",fontFamily:'Alibaba'}} onClick={handleClose}>پرواز داخلی</MenuItem>
+        <MenuItem sx={{color:"black",fontFamily:'Alibaba'}} onClick={handleClose}>پرواز خارجی</MenuItem>
       </Menu>
     </>
   );

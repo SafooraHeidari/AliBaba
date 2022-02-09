@@ -3,11 +3,28 @@ import NavBarLeftBox from './NavBarLeftBox/NavBarLeftBox';
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
 import Logo from "./Logo/Logo";
 import theme from '../../styles/theme'
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-const NavBar = () => {
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
   return (
-      <Box>
-        <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}}>
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+const NavBar = (props) => {
+  
+  return (
+    <HideOnScroll {...props}>
+      <AppBar sx={{background:theme.palette.white.main,fontFamily:"Alibaba"}} position="sticky">
           <Container>
             <Toolbar>
               <NavBarLeftBox />
@@ -16,8 +33,8 @@ const NavBar = () => {
             </Toolbar>
           </Container>
         </AppBar>
-      </Box>
-
+    </HideOnScroll>
+        
   );
 };
 
