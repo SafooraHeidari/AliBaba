@@ -1,8 +1,18 @@
+import iranAir from "./../asset/images/iranAir.png";
+import gheshmAir from "./../asset/images/gheshmAir.png";
+import aseman from "./../asset/images/aseman.png";
+import zagros from "./../asset/images/zagros.png";
+import iranAirTour from "./../asset/images/iranAirTour.png";
+import kaspian from "./../asset/images/kaspian.png";
+import varesh from "./../asset/images/varesh.png";
+import ata from "./../asset/images/ata.png";
+import saha from "./../asset/images/saha.png";
 
-const flights = [
+
+export const flights = [
     {
         id : 1,
-        image :"./../asset/images/iranAir.png",
+        image : iranAir,
         from: "تهران",
         to: "شیراز",
         fromTime:"21:30",
@@ -12,11 +22,12 @@ const flights = [
         economy:true,
         model:"Airbus A319",
         price:"8060000",
+        full: false,
         seat: 1
     },
     {
         id : 2,
-        image :"./../asset/images/gheshmAir.png",
+        image : gheshmAir,
         from: "تهران",
         to: "شیراز",
         fromTime:"07:00",
@@ -26,11 +37,12 @@ const flights = [
         economy:true,
         model:"Boeing MD",
         price:"8350000",
+        full: false,
         seat: 2
     },
     {
         id : 3,
-        image :"./../asset/images/iranAir.png",
+        image : iranAir,
         from: "تهران",
         to: "شیراز",
         fromTime:"21:30",
@@ -40,11 +52,12 @@ const flights = [
         economy:true,
         model:"Airbus A319",
         price:"8705000",
+        full: false,
         seat: 9
     },
     {
         id : 4,
-        image :"./../asset/images/aseman.png",
+        image : aseman,
         from: "تهران",
         to: "شیراز",
         fromTime:"20:50",
@@ -54,12 +67,13 @@ const flights = [
         economy:true,
         model:"fokker 100",
         price:"8450000",
+        full: false,
         seat: 2
     },
     {
         id : 5,
-        image :"./../asset/images/iranAir.png",
-        from: "َشیراز",
+        image : iranAir,
+        from: "شیراز",
         to: "تهران",
         fromTime:"21:20",
         toTime:"23:25",
@@ -68,12 +82,13 @@ const flights = [
         economy:true,
         model:"ATR 72",
         price:"7580000",
+        full: false,
         seat: 3
     },
     {
         id : 6,
-        image :"./../asset/images/iranAirTour.png",
-        from: "َشیراز",
+        image : iranAirTour,
+        from: "شیراز",
         to: "تهران",
         fromTime:"20:15",
         toTime:"21:35",
@@ -82,12 +97,13 @@ const flights = [
         economy:false,
         model:"Boeing MD",
         price:"8500000",
+        full: false,
         seat: 5
     },
     {
         id : 7,
-        image :"./../asset/images/ata.png",
-        from: "َشیراز",
+        image : ata,
+        from: "شیراز",
         to: "تهران",
         fromTime:"08:30",
         toTime:"09:40",
@@ -96,12 +112,13 @@ const flights = [
         economy:true,
         model:"Boeing MD",
         price:"9000000",
+        full: false,
         seat: 7
     },
     {
         id : 8,
-        image :"./../asset/images/iranAir.png",
-        from: "َشیراز",
+        image : iranAir,
+        from: "شیراز",
         to: "تهران",
         fromTime:"06:30",
         toTime:"08:35",
@@ -110,11 +127,12 @@ const flights = [
         economy:false,
         model:"ATR 72",
         price:"6460000",
+        full: false,
         seat: 7
     },
     {
         id : 9,
-        image :"./../asset/images/varesh.png",
+        image : varesh,
         from: "تهران",
         to: "مشهد",
         fromTime:"06:35",
@@ -124,11 +142,12 @@ const flights = [
         economy:true,
         model:"Boeing 737",
         price:"9357000",
+        full: true,
         seat: 0
     },
     {
         id : 10,
-        image :"./../asset/images/iranAirTour.png",
+        image : iranAirTour,
         from: "تهران",
         to: "مشهد",
         fromTime:"18:05",
@@ -138,11 +157,12 @@ const flights = [
         economy:true,
         model:"Boeing MD-82",
         price:"8500000",
+        full: false,
         seat: 5
     },
     {
         id : 11,
-        image :"./../asset/images/kaspian.png",
+        image : kaspian,
         from: "تهران",
         to: "مشهد",
         fromTime:"15:40",
@@ -152,11 +172,12 @@ const flights = [
         economy:true,
         model:"Boeing MD-82",
         price:"9289000",
+        full: false,
         seat: 4
     },
     {
         id : 12,
-        image :"./../asset/images/aseman.png",
+        image : aseman,
         from: "تهران",
         to: "مشهد",
         fromTime:"08:25",
@@ -166,11 +187,12 @@ const flights = [
         economy:true,
         model:"fokker 100",
         price:"9289000",
+        full: true,
         seat: 0
     },
     {
         id : 13,
-        image :"./../asset/images/saha.png",
+        image : saha,
         from: "مشهد",
         to: "تهران",
         fromTime:"22:15",
@@ -180,11 +202,12 @@ const flights = [
         economy:true,
         model:"Boeing 737",
         price:"9289000",
+        full: false,
         seat: 9
     },
     {
         id : 14,
-        image :"./../asset/images/aseman.png",
+        image : aseman,
         from: "مشهد",
         to: "تهران",
         fromTime:"12:30",
@@ -194,11 +217,12 @@ const flights = [
         economy:true,
         model:"fokker 100",
         price:"11827000",
+        full: false,
         seat: 6
     },
     {
         id : 15,
-        image :"./../asset/images/kaspian.png",
+        image : kaspian,
         from: "مشهد",
         to: "تهران",
         fromTime:"20:15",
@@ -208,11 +232,12 @@ const flights = [
         economy:false,
         model:"Boeing MD-83",
         price:"10500000",
+        full: true,
         seat: 0
     },
     {
         id : 16,
-        image :"./../asset/images/zagros.png",
+        image : zagros,
         from: "مشهد",
         to: "تهران",
         fromTime:"21:00",
@@ -222,14 +247,12 @@ const flights = [
         economy:false,
         model:"Boeing MD-82",
         price:"9500000",
+        full: false,
         seat: 6
     },
-
-
-
     {
         id : 17,
-        image :"./../asset/images/iranAir.png",
+        image : iranAir,
         from: "شیراز",
         to: "مشهد",
         fromTime:"09:05",
@@ -239,12 +262,13 @@ const flights = [
         economy:true,
         model:"ATR 72",
         price:"7000000",
+        full: false,
         seat: 9
     },
     {
         id : 18,
-        image :"./../asset/images/iranAir.png",
-        from: "َشیراز",
+        image : iranAir,
+        from: "شیراز",
         to: "مشهد",
         fromTime:"11:00",
         toTime:"12:15",
@@ -253,11 +277,12 @@ const flights = [
         economy:true,
         model:"ATR 72",
         price:"6940000",
+        full: false,
         seat: 8
     },
     {
         id : 19,
-        image :"./../asset/images/aseman.png",
+        image : aseman,
         from: "شیراز",
         to: "مشهد",
         fromTime:"10:00",
@@ -267,12 +292,13 @@ const flights = [
         economy:true,
         model:"fokker 100",
         price:"11827000",
+        full: false,
         seat: 3
     },
     {
         id : 20,
-        image :"./../asset/images/kaspian.png",
-        from: "َشیراز",
+        image : kaspian,
+        from: "شیراز",
         to: "مشهد",
         fromTime:"17:45",
         toTime:"19:30",
@@ -281,16 +307,14 @@ const flights = [
         economy:true,
         model:"Boeing MD-83",
         price:"10700000",
+        full: false,
         seat: 2
     },
-
-
-
     {
         id : 21,
-        image :"./../asset/images/saha.png",
+        image : saha,
         from: "مشهد",
-        to: "َشیراز",
+        to: "شیراز",
         fromTime:"12:00",
         toTime:"13:45",
         airline:"ساها",
@@ -298,13 +322,14 @@ const flights = [
         economy:true,
         model:"fokker 100",
         price:"11827000",
+        full: true,
         seat: 0
     },
     {
         id : 22,
-        image :"./../asset/images/kaspian.png",
+        image : kaspian,
         from: "مشهد",
-        to: "َشیراز",
+        to: "شیراز",
         fromTime:"20:15",
         toTime:"22:00",
         airline:"کاسپین",
@@ -312,13 +337,14 @@ const flights = [
         economy:false,
         model:"Boeing MD-83",
         price:"10500000",
+        full: false,
         seat: 3
     },
     {
         id : 23,
-        image :"./../asset/images/aseman.png",
+        image : aseman,
         from: "مشهد",
-        to: "َشیراز",
+        to: "شیراز",
         fromTime:"12:30",
         toTime:"14:20",
         airline:"آسمان",
@@ -326,13 +352,14 @@ const flights = [
         economy:false,
         model:"fokker 100",
         price:"11827000",
+        full: true,
         seat: 0
     },
     {
         id : 24,
-        image :"./../asset/images/zagros.png",
+        image : zagros,
         from: "مشهد",
-        to: "َشیراز",
+        to: "شیراز",
         fromTime:"21:00",
         toTime:"22:40",
         airline:"زاگرس",
@@ -340,6 +367,7 @@ const flights = [
         economy:true,
         model:"Boeing MD-82",
         price:"9500000",
+        full: false,
         seat: 1
     },
 ];
