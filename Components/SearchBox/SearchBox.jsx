@@ -16,7 +16,12 @@ import Tour from "../../styles/assest/Icons/Tour";
 import Bus from "../../styles/assest/Icons/Bus";
 import Train from "../../styles/assest/Icons/Train";
 import DomesticFlightTabPanel from "./DomesticFlightTabPanel/DomesticFlightTabPanel";
-import ForeignFlightTabPanel from "./ForeignPlaneTabPanel/ForeignFlightTabPanel"
+import ForeignFlightTabPanel from "./ForeignPlaneTabPanel/ForeignFlightTabPanel";
+import TrainTabPanel from "./TrainTabPanel/TrainTabPanel";
+import BusTabPanel from "./BusTabPanel/BusTabPanel";
+import TourPanel from "./TourPanel/TourPanel";
+import HotelPanel from "./HotelPanel/HotelPanel";
+import ResidencePanel from "./ResidencePanel/ResidencePanel"
 
 export default function SearchBox(){
     const [value, setValue] = useState('1');
@@ -43,11 +48,11 @@ export default function SearchBox(){
                 </Box>
                 <TabPanel value="1"><DomesticFlightTabPanel/></TabPanel>
                 <TabPanel value="2"><ForeignFlightTabPanel/></TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="3">Item Three</TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="4">Item Three</TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="5">Item Three</TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="6">Item Three</TabPanel>
-                <TabPanel sx={{direction:'rtl'}} value="7">Item Three</TabPanel>
+                <TabPanel value="3"><TrainTabPanel/></TabPanel>
+                <TabPanel value="4"><BusTabPanel/></TabPanel>
+                <TabPanel value="5"><TourPanel/></TabPanel>
+                <TabPanel value="6"><HotelPanel/></TabPanel>
+                <TabPanel value="7"><ResidencePanel/></TabPanel>
             </TabContext>
 
 

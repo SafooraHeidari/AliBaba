@@ -2,29 +2,33 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import {Box, Button, InputAdornment} from "@mui/material";
-import Hotel from "../../../styles/assest/Icons/Hotel";
-import { styled } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
 
 import MyDatePicker from "../Common/MyDatePicker";
-import Selector from "../Common/Selector";
+import Selector from "../Common/Selector"
 
 const optionsCity = ['تهران', 'شیراز', 'مشهد'];
 const optionsNum = [1, 2, 3, 4];
 
-const selectorOptions = [
+const selectorOptions1 = [
     'یک طرفه',
     'رفت و برگشت',
 ];
-
+const selectorOptions2 = [
+    'دربست می خواهم',
+    'دربست نمی خواهم',
+];
+const selectorOptions3 = [
+    'مسافرین عادی',
+    'ویژه برادران',
+    'ویژه خواهران',
+];
 
 const sxFrom = {
-        "& .css-ekiabt-MuiInputBase-root-MuiOutlinedInput-root":{
-            borderRadius: '0 8px 8px 0',
-            height: '48px',
-        },
-        width:'229px',
-    direction:'rtl'
+    "& .css-ekiabt-MuiInputBase-root-MuiOutlinedInput-root":{
+        borderRadius: '0 8px 8px 0',
+        height: '48px',
+    },
+    width:'229px',
 }
 
 const sxTo = {
@@ -46,22 +50,21 @@ const sxPassengers = {
 }
 
 
-// InputLabelProps={{
-//     style: {
-//         width: '100%',
-//             color: 'green',
-//             transformOrigin: 'top left',
-//     }}}
-
-export default function DomesticFlightTabPanel(){
+export default function TrainTabPanel(){
     return(
         <Box sx={{display:'flex',flexDirection:'column'}}>
-            <Selector options={selectorOptions}/>
+            <Box sx={{display:'flex',flexDirection:'row',gap:'10px'}}>
+                <Selector options={selectorOptions1}/>
+                <Selector options={selectorOptions2}/>
+                <Selector options={selectorOptions3}/>
+            </Box>
+
             <Box sx={{display:'flex',flexDirection:'row'}}>
                 <Autocomplete sx={sxFrom}
                               freeSolo
                               options={optionsCity}
-                              renderInput={(params) => <TextField size="small" {...params} label="مبدا (شهر)"/>}/>
+                              renderInput={(params) => (<TextField size="small" {...params} label="مبدا (شهر)"/>
+                              )}/>
                 <Autocomplete sx={sxTo}
                               freeSolo
                               options={optionsCity}
