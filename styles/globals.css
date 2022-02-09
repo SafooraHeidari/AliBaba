@@ -1,3 +1,6 @@
+:root{
+  --swiper-navigation-size: 10px !important;
+}
 html,
 body{
   padding: 0;

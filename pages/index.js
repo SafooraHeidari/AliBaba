@@ -6,22 +6,24 @@ import NavBar from "../Components/NavBar/NavBar";
 import RecentSearch from "../Components/RecentSearch/RecentSearch";
 import YourQuestions from "../Components/YourQuestions/YourQuestions";
 import Advertise from './../Components/Advertise/Advertise'
+import DateSwiper from "../Components/dateSwiper2/DateSwiper";
 
 export default function Home() {
     return (
-            <Box>
+            // <Box>
                 
-                <NavBar/>
-                <Container>
-                    <RecentSearch/>
-                    <Advertise/>
-                    <YourQuestions/>
-                </Container>
+            //     <NavBar/>
+            //     <Container>
+            //         <RecentSearch/>
+            //         <Advertise/>
+            //         <YourQuestions/>
+            //     </Container>
 
 
-                    <Footer/>
+            //         <Footer/>
                
-            </Box>
+            // </Box>
+            <Box><DateSwiper/></Box>
 
 
     )
