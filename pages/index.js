@@ -7,7 +7,7 @@ import RecentSearch from "../Components/RecentSearch/RecentSearch";
 import YourQuestions from "../Components/YourQuestions/YourQuestions";
 import Advertise from './../Components/Advertise/Advertise'
 import SearchBox from './../Components/SearchBox/SearchBox'
-
+// import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
 export default function Home() {
     return (
@@ -19,6 +19,7 @@ export default function Home() {
                     <RecentSearch/>
                     <Advertise/>
                     <YourQuestions/>
+                    {/* <Plane_Ticket/> */}
                 </ThemeProvider>
                 </Container>
                     <Footer/>
