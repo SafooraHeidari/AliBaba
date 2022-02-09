@@ -13,6 +13,7 @@ export default function Home() {
                 
                 <NavBar/>
                 <Container>
+                    <RightSidebar/>
                     <RecentSearch/>
                     <Advertise/>
                     <YourQuestions/> 
