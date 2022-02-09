@@ -32,7 +32,7 @@ export default function SearchBox(){
 
 
     return(
-        <Container sx={{direction:'rtl', height:'265px', width:'1200px',borderRadius:'8px',
+        <Container sx={{direction:'rtl', height:'265px',borderRadius:'8px',
             boxShadow:'0 2px 1px -1px rgba(0, 0, 0, .08)' ,border: 'solid 1px rgba(0, 0, 0, .1)'}}>
             <TabContext sx={{direction:'rtl'}} value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' ,direction:'rtl'}}>
