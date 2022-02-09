@@ -7,17 +7,19 @@ import Menu from '@mui/material/Menu';
 
 const styles = {
     new: {
-
-        width: '110px',
-            height: '40px',
-            borderRadius: '15px',
-            border: 'solid 1px gray',
-            padding: '0px',
+        direction:'rtl',
+        width: '130px',
+        height: '40px',
+        borderRadius: '15px',
+        border: 'solid 1px gray',
+        padding: '0px',
         '&:hover':{
         border:'solid 2px blue',
         },
         "& .css-1j6ebxq-MuiTypography-root":{
             fontSize: '14px',
+            float:'right',
+            marginRight: '10px'
         }
     }
 }

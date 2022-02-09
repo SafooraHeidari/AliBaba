@@ -46,7 +46,7 @@ const sxPassengers = {
         height: '48px'
     },
     width:'183px',
-    marginLeft: '21px'
+    marginX: '21px'
 }
 
 

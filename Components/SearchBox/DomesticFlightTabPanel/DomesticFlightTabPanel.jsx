@@ -4,7 +4,6 @@ import Autocomplete from '@mui/material/Autocomplete';
 import {Box, Button, InputAdornment} from "@mui/material";
 import Hotel from "../../../styles/assest/Icons/Hotel";
 import { styled } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
 
 import MyDatePicker from "../Common/MyDatePicker";
 import Selector from "../Common/Selector";
@@ -42,7 +41,7 @@ const sxPassengers = {
         height: '48px'
     },
     width:'183px',
-    marginLeft: '21px'
+    marginX: '21px'
 }
 
 
