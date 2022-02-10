@@ -8,8 +8,13 @@ import { styled } from '@mui/material/styles';
 import MyDatePicker from "../Common/MyDatePicker";
 import Selector from "../Common/Selector";
 
+import {FlightContext} from "./../../../pages/index";
+
+import {useState,useContext} from "react";
+
+
 const optionsCity = ['تهران', 'شیراز', 'مشهد'];
-const optionsNum = [1, 2, 3, 4];
+const optionsNum = ['1', '2', '3', '4'];
 
 const selectorOptions = [
     'یک طرفه',
@@ -45,14 +50,30 @@ const sxPassengers = {
 }
 
 
-// InputLabelProps={{
-//     style: {
-//         width: '100%',
-//             color: 'green',
-//             transformOrigin: 'top left',
-//     }}}
+const data = {
+    id: 0,
+    fromCity: '',
+    toCity: '',
+    passengers: '',
+};
 
-export default function DomesticFlightTabPanel(){
+
+
+
+export default function DomesticFlightTabPanel(props){
+
+    // const flights = useContext(FlightContext);
+    const [searchData, setSearchData] = useState(data);
+
+    const handleSubmit = () => {
+        // const selectFlight = flights.filter(item =>
+        //     (item.from.toLowerCase().includes(searchData.fromCity.toLowerCase())
+        //
+        //         && item.to.toLowerCase().includes(searchData.toCity.toLowerCase())))
+        console.log(searchData)
+        props.onFilterData(searchData);
+    }
+
     return(
         <Box sx={{display:'flex',flexDirection:'column'}}>
             <Selector options={selectorOptions}/>
@@ -60,17 +81,24 @@ export default function DomesticFlightTabPanel(){
                 <Autocomplete sx={sxFrom}
                               freeSolo
                               options={optionsCity}
-                              renderInput={(params) => <TextField size="small" {...params} label="مبدا (شهر)"/>}/>
+
+                              renderInput={(params) => <TextField
+                                  onSelect={e => setSearchData({...searchData, fromCity: e.target.defaultValue})}
+                                  size="small" {...params} label="مبدا (شهر)"/>}/>
                 <Autocomplete sx={sxTo}
                               freeSolo
                               options={optionsCity}
-                              renderInput={(params) => <TextField size="small" {...params} label="مقصد (شهر)" />}/>
+                              renderInput={(params) => <TextField
+                                  onSelect={e => setSearchData({...searchData, toCity: e.target.defaultValue})}
+                                  size="small" {...params} label="مقصد (شهر)" />}/>
                 <MyDatePicker/>
                 <Autocomplete sx={sxPassengers}
                               freeSolo
                               options={optionsNum}
-                              renderInput={(params) => <TextField size="small" {...params} label="مسافران" />}/>
-                <Button variant="contained" sx={{width:'183px', height:'45px'}}>جستجو</Button>
+                              renderInput={(params) => <TextField
+                                  onSelect={e => setSearchData({...searchData, passengers: e.target.defaultValue})}
+                                  size="small" {...params} label="مسافران" />}/>
+                <Button onClick={handleSubmit} variant="contained" sx={{width:'183px', height:'45px'}}>جستجو</Button>
             </Box>
         </Box>
     )
