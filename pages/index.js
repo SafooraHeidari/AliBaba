@@ -6,29 +6,26 @@
 // import RecentSearch from "../Components/RecentSearch/RecentSearch";
 // import YourQuestions from "../Components/YourQuestions/YourQuestions";
 // import Advertise from './../Components/Advertise/Advertise'
+import Sort from "../Components/sort/Sort";
 
-import {Box} from "@mui/material";
-import SearchCardContainer from './../Components/SearchCard/SearchCardContainer'
+import { Box } from "@mui/material";
+import SearchCardContainer from "./../Components/SearchCard/SearchCardContainer";
 
 export default function Home() {
-    return (
-            <Box>
+  return (
+    <Box>
+      <Sort />
 
+      <SearchCardContainer />
 
-                <SearchCardContainer/>
+      {/*<NavBar/>*/}
+      {/*<Container>*/}
+      {/*    <RecentSearch/>*/}
+      {/*    <Advertise/>*/}
+      {/*    <YourQuestions/>*/}
+      {/*</Container>*/}
 
-                {/*<NavBar/>*/}
-                {/*<Container>*/}
-                {/*    <RecentSearch/>*/}
-                {/*    <Advertise/>*/}
-                {/*    <YourQuestions/>*/}
-                {/*</Container>*/}
-
-
-                {/*    <Footer/>*/}
-
-            </Box>
-
-
-    )
+      {/*    <Footer/>*/}
+    </Box>
+  );
 }
