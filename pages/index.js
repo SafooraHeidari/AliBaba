@@ -6,6 +6,7 @@ import NavBar from "../Components/NavBar/NavBar";
 import RecentSearch from "../Components/RecentSearch/RecentSearch";
 import YourQuestions from "../Components/YourQuestions/YourQuestions";
 import PlaneTicket from "../Components/PlaneTicket/PlaneTicket";
+import StepperPay from "../Components/StepperPay/StepperPay";
 
 export default function Home() {
     return (
@@ -17,7 +18,7 @@ export default function Home() {
                     <YourQuestions/>
                     <PlaneTicket />
                 </Container>
-
+                <StepperPay />
 
                     <Footer/>
             </Box>
