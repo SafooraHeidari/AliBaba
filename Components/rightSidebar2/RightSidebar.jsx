@@ -49,7 +49,7 @@ export default function RightSidebar() {
     };
     return(
         <>
-        <Accordion sx={{width:'30%'}} style={styles.myAccordion}>
+        <Accordion style={styles.myAccordion}>
                     <AccordionSummary
                         id="panel1bh-header">
                         <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>نتایج:13</Typography>
@@ -57,7 +57,7 @@ export default function RightSidebar() {
                 </Accordion>
         {
             AccordionData.map( data => (
-                <Accordion sx={{width:'30%'}} style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>
+                <Accordion  style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panel1bh-content"

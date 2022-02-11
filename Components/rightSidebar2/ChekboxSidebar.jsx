@@ -11,8 +11,8 @@ const TypeSidebar = ({first,second}) => {
     <>
     <ThemeProvider theme={theme} >
      <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'},}}>
-      <FormControlLabel  control={<Checkbox {...label} defaultChecked color="secondary"/>} label={first} />
-      <FormControlLabel control={<Checkbox {...label} defaultChecked color="secondary" />} label={second} />
+      <FormControlLabel  control={<Checkbox {...label}  color="secondary"/>} label={first} />
+      <FormControlLabel control={<Checkbox {...label}  color="secondary" />} label={second} />
     </FormGroup>
     </ThemeProvider>
     </>
