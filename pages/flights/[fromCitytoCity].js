@@ -68,8 +68,6 @@ export async function getStaticProps(context) {
             flight
         }
     }
-
-
 }
 
 
