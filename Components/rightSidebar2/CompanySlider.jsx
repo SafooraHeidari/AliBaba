@@ -14,7 +14,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 import {ThemeProvider} from "@emotion/react";
 import theme from "../../styles/theme";
 import FormGroup from '@mui/material/FormGroup';
-
+import {Box,Avatar} from '@mui/material';
 const company = [
     {
         id:1,
@@ -59,7 +59,9 @@ const CompanySidebar = () => {
      <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'},}}>
     {
         company.map( data => (
-            <FormControlLabel control={<Checkbox {...label}  color="secondary" />} label={data.airline} /> 
+            <Box sx={{display:'flex'}}>
+            <FormControlLabel control={<Checkbox />} label={data.airline} /> 
+            </Box>
         ))
     }
     </FormGroup>
