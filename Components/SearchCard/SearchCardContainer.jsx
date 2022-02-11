@@ -1,12 +1,11 @@
 import Box from "@mui/material/Box";
-import {flights} from './../../data/data';
-import SearchCard from './SearchCard'
+import SearchCard from './SearchCard';
 
-export default function SearchCardContainer(){
+export default function SearchCardContainer({flight}){
     return(
         <Box>
-            {flights.map(flight =>
-                    <SearchCard flight={flight}/>)}
+            {flight.map(fl =>
+                    <SearchCard flight={fl}/>)}
         </Box>
     )
 }

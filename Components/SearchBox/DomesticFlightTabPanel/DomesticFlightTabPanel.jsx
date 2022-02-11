@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 
 import MyDatePicker from "../Common/MyDatePicker";
 import Selector from "../Common/Selector";
+import Link from 'next/link'
 
 import {FlightContext} from "./../../../pages/index";
 
@@ -70,7 +71,7 @@ export default function DomesticFlightTabPanel(props){
         //     (item.from.toLowerCase().includes(searchData.fromCity.toLowerCase())
         //
         //         && item.to.toLowerCase().includes(searchData.toCity.toLowerCase())))
-        console.log(searchData)
+        // console.log(searchData)
         props.onFilterData(searchData);
     }
 
@@ -98,7 +99,9 @@ export default function DomesticFlightTabPanel(props){
                               renderInput={(params) => <TextField
                                   onSelect={e => setSearchData({...searchData, passengers: e.target.defaultValue})}
                                   size="small" {...params} label="مسافران" />}/>
-                <Button onClick={handleSubmit} variant="contained" sx={{width:'183px', height:'45px'}}>جستجو</Button>
+                <Link href={'/flights/'+ searchData.fromCity+'-'+searchData.toCity}>
+                    <Button onClick={handleSubmit} variant="contained" sx={{width:'183px', height:'45px'}}>جستجو</Button>
+                </Link>
             </Box>
         </Box>
     )

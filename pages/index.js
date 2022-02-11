@@ -21,17 +21,23 @@ export default function Home() {
         <Box>
             <NavBar/>
 
+            <SearchBox/>
             <Container>
                 <ThemeProvider theme={theme}>
+
+
                     <FlightContext.Provider value={flights}>
-                        <SearchBox/>
+
+
                         <RecentSearch/>
                         <Advertise/>
                         <YourQuestions/>
                     </FlightContext.Provider>
                     {/* <Plane_Ticket/> */}
+
                 </ThemeProvider>
             </Container>
+
 
             <Footer/>
         </Box>
