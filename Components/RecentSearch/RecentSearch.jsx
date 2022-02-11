@@ -16,7 +16,7 @@ function RecentSearch(){
                 </Box>
                 <Box sx={{marginTop: 1,display:'flex',flexDirection:'row',alignItems:'center',color:theme.palette.gray.four}}>
                     <EventNoteOutlinedIcon sx={{marginRight:1}}/>
-                    <Typography sx={{fontFamily:'Alibaba',marginX: 1,fontSize: 14}}>20 بهمن</Typography>
+                    <Typography sx={{fontFamily:'Alibaba',marginX: 1,fontSize: 14}}>۲۰ بهمن</Typography>
                 </Box>
             </Card>
         </Box>

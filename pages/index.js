@@ -6,22 +6,23 @@ import NavBar from "../Components/NavBar/NavBar";
 import RecentSearch from "../Components/RecentSearch/RecentSearch";
 import YourQuestions from "../Components/YourQuestions/YourQuestions";
 import Advertise from './../Components/Advertise/Advertise'
+import SearchBox from './../Components/SearchBox/SearchBox'
+// import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
 export default function Home() {
     return (
             <Box>
-                
                 <NavBar/>
                 <Container>
-                    <RightSidebar/>
+                <ThemeProvider theme={theme}>
+                    <SearchBox/>
                     <RecentSearch/>
                     <Advertise/>
-                    <YourQuestions/> 
+                    <YourQuestions/>
+                    {/* <Plane_Ticket/> */}
+                </ThemeProvider>
                 </Container>
-
-
                     <Footer/>
-               
             </Box>
 
 
