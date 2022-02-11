@@ -6,13 +6,13 @@ import {ThemeProvider} from "@emotion/react";
 import theme from "../../styles/theme";
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-const TypeSidebar = () => {
+const TypeSidebar = ({first,second}) => {
   return (
     <>
     <ThemeProvider theme={theme} >
-     <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'}}}>
-      <FormControlLabel control={<Checkbox />} label="سیستمی" />
-      <FormControlLabel control={<Checkbox />} label="چارتری" />
+     <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'},}}>
+      <FormControlLabel  control={<Checkbox {...label}  color="secondary"/>} label={first} />
+      <FormControlLabel control={<Checkbox {...label}  color="secondary" />} label={second} />
     </FormGroup>
     </ThemeProvider>
     </>
