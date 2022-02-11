@@ -58,7 +58,7 @@ const sx = {
 }
 
 export default function SearchBox() {
-    const flights = useContext(FlightContext)
+    const {flights,dispatch} = useContext(FlightContext)
 
     const filterDataHandler = (enteredSearchData) => {
         const selectFlight = flights.filter(item =>

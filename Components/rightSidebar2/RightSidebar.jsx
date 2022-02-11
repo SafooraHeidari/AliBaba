@@ -6,35 +6,8 @@ import theme from "../../styles/theme";
 import {Accordion, AccordionDetails, Typography} from "@mui/material";
 import TypeSidebar from "./ChekboxSidebar";
 import TimeSlider from "./TimeSlidebar";
-import CompanySidebar from "./CompanySlider";
-const AccordionData=[
-    {
-        id:1,
-        title:'ساعت حرکت',
-        childe:<TimeSlider/>
+import CompanySidebar from './CompanySlider'
 
-    },
-    {
-        id:2,
-        title:'نوع بلیط',
-        childe:<TypeSidebar first={'چارتر'} second={'سیستمی'}/>
-    },
-    {
-        id:3,
-        title:'کلاس پروازی',
-        childe:<TypeSidebar first={'اکونومی'} second={'بیزینس'}/>
-    },
-    {
-        id:4,
-        title:'شرکت‌های هواپیمایی',
-        childe:<CompanySidebar/>
-    },
-    {
-        id:5,
-        title:'موارد دیگر',
-        childe:<TypeSidebar first={'نمایش بلیط‌های تکراری'} second={'نمایش بلیط‌های موجود'}/>
-    },
-]
 const styles = {
     myAccordion :{
         margin:'0 !important',
@@ -42,7 +15,35 @@ const styles = {
         border:'1px solid rgba(0, 0, 0, .1)'
     },
 }
-export default function RightSidebar() {
+export default function RightSidebar({flight,dispatch}) {
+    const AccordionData=[
+        {
+            id:1,
+            title:'ساعت حرکت',
+            childe:<TimeSlider flight={flight} dispatch={dispatch} />
+    
+        },
+        {
+            id:2,
+            title:'نوع بلیط',
+            childe:<TypeSidebar first={'چارتر'} second={'سیستمی'}/>
+        },
+        {
+            id:3,
+            title:'کلاس پروازی',
+            childe:<TypeSidebar first={'اکونومی'} second={'بیزینس'}/>
+        },
+        {
+            id:4,
+            title:'شرکت‌های هواپیمایی',
+            childe:<CompanySidebar/>
+        },
+        {
+            id:5,
+            title:'موارد دیگر',
+            childe:<TypeSidebar first={'نمایش بلیط‌های تکراری'} second={'نمایش بلیط‌های موجود'}/>
+        },
+    ]
     const [expanded, setExpanded] = React.useState('panel1');
   
     const handleChange = (panel) => (event, newExpanded) => {

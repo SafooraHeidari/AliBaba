@@ -11,8 +11,11 @@ import {useState, createContext} from "react";
 import {flights as data} from "./../data/data"
 // import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
-export const FlightContext = createContext([]);
 
+export const FlightContext = createContext({
+    flights: [], dispatch: () => {
+    }
+    });
 
 export default function Home() {
 

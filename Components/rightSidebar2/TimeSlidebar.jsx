@@ -1,15 +1,20 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import {useState, useContext} from "react";
+import {FlightContext} from "./../../pages/index";
 
 function valuetext(value) {
-  return `${value}°C`;
+  return value;
 }
 const minDistance = 1;
-export default function TimeSlider() {
-    const [value, setValue] = React.useState([7, 21]);
-
-  const handleChange = (event, newValue, activeThumb) => {
+export default function TimeSlider({flight}) {
+  const {flights,dispatch} = useContext(FlightContext)
+  const [value, setValue] = React.useState([7, 21]);
+  const handelFilter = () => {
+    dispatch({type: 'timeFilter', payload: {from: value[0], to: value[1]}})
+  }
+  const handleChange = (event, newValue, activeThumb,flight) => {
     if (!Array.isArray(newValue)) {
       return;
     }
@@ -19,8 +24,9 @@ export default function TimeSlider() {
     } else {
       setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
     }
+    handelFilter();
   };
-
+  {console.log(flights)}
   return (
     <Box>
       <Slider
@@ -35,6 +41,7 @@ export default function TimeSlider() {
         valueLabelDisplay="on"
         getAriaValueText={valuetext}
       />
+      
     </Box>
   );
 }
