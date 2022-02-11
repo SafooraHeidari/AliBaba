@@ -6,6 +6,7 @@ import theme from "../../styles/theme";
 import {Accordion, AccordionDetails, Typography} from "@mui/material";
 import TypeSidebar from "./ChekboxSidebar";
 import TimeSlider from "./TimeSlidebar";
+import CompanySidebar from "./CompanySlider";
 const AccordionData=[
     {
         id:1,
@@ -26,7 +27,7 @@ const AccordionData=[
     {
         id:4,
         title:'شرکت‌های هواپیمایی',
-        childe:<TypeSidebar first={'چارتر'} second={'سیستمی'}/>
+        childe:<CompanySidebar/>
     },
     {
         id:5,
