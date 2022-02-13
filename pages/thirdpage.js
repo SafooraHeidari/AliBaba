@@ -6,6 +6,7 @@ import NavBar from "../Components/NavBar/NavBar";
 import Pricing from '../Components/pricing/Pricing'
 import TicketWarning from "../Components/ticketWarning/TicketWarning";
 import Notify from "../Components/Notify/Notify";
+import Passengers from '../Components/passengers/Passengers'
 const thirdpage = () => {
   return (
     <Box>
@@ -15,6 +16,7 @@ const thirdpage = () => {
         <ThemeProvider theme={theme}>
           <Pricing/>
           <TicketWarning/>
+          <Passengers/>
           <Notify/>
         </ThemeProvider>
       </Container>
