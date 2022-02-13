@@ -10,6 +10,7 @@ import SearchBox from './../Components/SearchBox/SearchBox';
 import {useState, createContext, useReducer} from "react";
 import {flights as data} from "./../data/data"
 import reducer from "./../Components/Reducer"
+import PlaneTicket from './../Components/PlaneTicket/PlaneTicket'
 // import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
 
@@ -36,6 +37,7 @@ export default function Home() {
                         {/* <RecentSearch/> */}
                         <Advertise/>
                         <YourQuestions/>
+                        <PlaneTicket/>
                     </FlightContext.Provider>
                     {/* <Plane_Ticket/> */}
 
