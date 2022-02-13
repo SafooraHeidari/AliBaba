@@ -13,6 +13,8 @@ import { createContext, useReducer,useContext} from "react";
 import {FlightContext} from "./../../pages/index";
 import reducer from './../../Components/Reducer';
 import Sort from './../../Components/sort/Sort';
+import theme from "../../styles/theme";
+import { ThemeProvider } from "@mui/private-theming";
 const cities = [{fromCity:'مشهد',toCity: 'شیراز'},
     {fromCity:'مشهد',toCity: 'تهران'},
     {fromCity:'تهران',toCity: 'شیراز'},
@@ -30,7 +32,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Flights({flight}) {
     const [flights, dispatch] = useReducer(reducer, flight);
     return (
-        <Box>
+        <Box bgcolor={theme.palette.bg.main}>
             <NavBar/>
             <Container sx={{marginY:'3rem'}}>
             <Box sx={{ flexGrow: 1 }}>
@@ -49,6 +51,7 @@ export default function Flights({flight}) {
             </Container>
             <Footer/>
         </Box>
+       
     )
 };
 

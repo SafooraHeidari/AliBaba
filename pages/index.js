@@ -22,7 +22,7 @@ export default function Home() {
 
     const [flightss, dispatch] = useReducer(reducer, []);
     return (
-        <Box>
+        <Box  bgcolor={theme.palette.bg.main}>
             <NavBar/>
 
             <SearchBox/>
@@ -33,7 +33,7 @@ export default function Home() {
                     <FlightContext.Provider value={{flightss, dispatch}}>
 
 
-                        <RecentSearch/>
+                        {/* <RecentSearch/> */}
                         <Advertise/>
                         <YourQuestions/>
                     </FlightContext.Provider>

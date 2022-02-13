@@ -14,73 +14,86 @@ const styles={
 const data =[
     {
         id:1,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'سه شنبه - ۱۲/۱۰',
+        price:'۸۷۰',
+        color:'red'
     },
     {
         id:2,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'چهارشنبه - ۱۲/۱۱',
+        price:'۸۰۶',
+        color:'black'
     },
     {
         id:3,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'پنج‌شنبه - ۱۲/۱۲',
+        price:'۷۵۴',
+        color:'green'
     },
     {
         id:4,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'جمعه - ۱۲/۱۳',
+        price:'۷۸۰',
+        color:'black'
     },
     {
         id:5,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'شنبه - ۱۲/۱۴',
+        price:'۸۰۶',
+        color:'black'
     },
     {
         id:6,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'یک‌شنبه - ۱۲/۱۵',
+        price:'۷۸۰',
+        color:'black'
     },
     {
         id:7,
-        day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        day:'دوشنبه - ۱۲/۱۶',
+        price:'۷۸۰',
+        color:'black'
     },
     {
         id:8,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
     {
         id:9,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
     {
         id:10,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
     {
         id:11,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
     {
         id:12,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
     {
         id:13,
         day:'جمعه - ۱۱/۱۵',
-        price:'۷۰۰'
+        price:'۷۰۰',
+        color:'black'
     },
 ]
 export default function DateSwiper() {
   return (
-    <Box sx={{border:'1px solid rgba(0, 0, 0, .1)'}}>
+    <Box sx={{border:'1px solid rgba(0, 0, 0, .1)',borderRadius:'5px',backgroundColor:'white'}}>
       <Swiper
         dir="rtl"
         slidesPerView={7}
@@ -99,6 +112,7 @@ export default function DateSwiper() {
                 <DateSwiperCard
                 day={data.day}
                 price={data.price}
+                color={data.color}
                 />
              </SwiperSlide>
            ))
