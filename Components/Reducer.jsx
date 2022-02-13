@@ -4,7 +4,8 @@ export default function reducer(state, action) {
         case "initialState":
         return [...state, ...payload];
         case 'timeFilter':
-            return state.filter( f =>  Number((f.fromTime).split(":",1)) >= payload.form && Number((f.toTime).split(":",1)) <= payload.to )
+            const newState = [...state];
+            return newState.filter(flight => (flight.fromTime).split(':')[0] >= payload.from)
         default:
             return state;
     }

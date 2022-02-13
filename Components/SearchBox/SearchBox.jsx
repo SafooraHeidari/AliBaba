@@ -58,13 +58,7 @@ const sx = {
 }
 
 export default function SearchBox() {
-    const {flights,dispatch} = useContext(FlightContext)
-
-    const filterDataHandler = (enteredSearchData) => {
-        const selectFlight = flights.filter(item =>
-            (item.from.toLowerCase().includes(enteredSearchData.fromCity.toLowerCase())
-                && item.to.toLowerCase().includes(enteredSearchData.toCity.toLowerCase())));
-    }
+    const {flightss,dispatch} = useContext(FlightContext)
 
     const [value, setValue] = useState('1');
     const handleChange = (event, newValue) => {
@@ -95,7 +89,7 @@ export default function SearchBox() {
                                     <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7"/>
                                 </TabList>
                             </Box>
-                            <TabPanel value="1"><DomesticFlightTabPanel onFilterData={filterDataHandler}/></TabPanel>
+                            <TabPanel value="1"><DomesticFlightTabPanel/></TabPanel>
                             <TabPanel value="2"><ForeignFlightTabPanel/></TabPanel>
                             <TabPanel value="3"><TrainTabPanel/></TabPanel>
                             <TabPanel value="4"><BusTabPanel/></TabPanel>

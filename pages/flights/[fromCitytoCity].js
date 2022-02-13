@@ -9,7 +9,8 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import {flights as data} from "./../../data/data";
 import FrequentQuestions from "./../../Components/FrequentQuestions/FrequentQuestions"
-import { useReducer} from "react";
+import { createContext, useReducer,useContext} from "react";
+import {FlightContext} from "./../../pages/index";
 import reducer from './../../Components/Reducer'
 const cities = [{fromCity:'مشهد',toCity: 'شیراز'},
     {fromCity:'مشهد',toCity: 'تهران'},
@@ -25,11 +26,12 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-export default function flights({flight}) {
-    const [flights,dispatch]= useReducer(reducer,flight)
+export default function Flights({flight}) {
+    const [flights, dispatch] = useReducer(reducer, flight);
     return (
         <Box>
             <NavBar/>
+            {console.log(flights)}
             <Container sx={{marginY:'3rem'}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
@@ -39,8 +41,7 @@ export default function flights({flight}) {
                     <Grid item xs={3}>
                     <RightSidebar flight={flights} dispatch={dispatch}/>
                     </Grid>
-
-                    <FrequentQuestions flight={flights[0]}/>
+                    <FrequentQuestions flight={flight[0]}/>
                 </Grid>
             </Box>
             </Container>
@@ -70,8 +71,6 @@ export async function getStaticProps(context) {
             flight
         }
     }
-
-
 }
 
 
