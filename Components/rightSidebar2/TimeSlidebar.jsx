@@ -33,7 +33,7 @@ export default function TimeSlider({flight,dispatch}) {
     <Box onClick={handelFilter}>
       <Slider
       min={7}
-      max={23}
+      max={21}
         getAriaLabel={() => 'Minimum distance'}
         disableSwap
         sx={{'& .css-1kz0hui-MuiSlider-valueLabel':{color:'black !important',backgroundColor:'transparent !important'}, '& .css-eg0mwd-MuiSlider-thumb':{backgroundColor:'white !important'},'& .css-14pt78w-MuiSlider-rail':{backgroundColor:'grey !important'},'& .css-eg0mwd-MuiSlider-thumb:hover':{border:'2px solid #007aff; !important'}}}
