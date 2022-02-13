@@ -9,9 +9,8 @@ function valuetext(value) {
 }
 const minDistance = 1;
 export default function TimeSlider({flight,dispatch}) {
-  {console.log(flight)}
-  {console.log(dispatch)}
-  const [value, setValue] = React.useState([7, 21]);
+
+  const [value, setValue] = React.useState([7, 23]);
 
   const handelFilter = () => {
     dispatch({type: 'timeFilter', payload: {from: value[0]}})

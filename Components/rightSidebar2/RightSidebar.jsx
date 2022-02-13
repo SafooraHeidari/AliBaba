@@ -16,13 +16,13 @@ const styles = {
     },
 }
 
+
 function panels({flight,dispatch}){
     return([
             {
                 id:1,
                 title:'ساعت حرکت',
                 childe:<TimeSlider flight={flight} dispatch={dispatch} />
-
             },
             {
                 id:2,
@@ -37,7 +37,7 @@ function panels({flight,dispatch}){
             {
                 id:4,
                 title:'شرکت‌های هواپیمایی',
-                childe:<CompanySidebar flight={flight} dispatch={dispatch}/>
+                childe:<CompanySidebar  flight={flight} dispatch={dispatch}/>
             },
             {
                 id:5,
@@ -55,6 +55,24 @@ export default function RightSidebar({flight,dispatch}) {
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
     };
+
+    // const handleFilters = (filters, category) => {
+    //     // console.log(filters)
+    //     let companyFilters=[];
+    //     for (let ii = 0; ii < filters.length;ii++){
+    //         companyFilters.push(category[filters[ii]-1])
+    //     }
+    //     // console.log(companyFilters)
+    //     // console.log(companyFilters.indexOf('زاگرس'))
+    //
+    //     // const newFilters = {...Filters}
+    //     // newFilters[category] = filters
+    //     //
+    //     // setFilters(newFilters)
+    //     dispatch({type: 'companyFilter2', payload: {filters: filters,company:companyFilters}})
+    //     console.log(flight)
+    // }
+
     return(
         <>
         <Accordion style={styles.myAccordion}>
@@ -63,21 +81,38 @@ export default function RightSidebar({flight,dispatch}) {
                         <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>نتایج:13</Typography>
                     </AccordionSummary>
                 </Accordion>
-        {
-            AccordionData.map( data => (
-                <Accordion  style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel1bh-content"
-                        id="panel1bh-header">
-                        <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{data.title}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}>{data.childe}</Typography>
-                    </AccordionDetails>
-                </Accordion>
-            ))
-        }
+        {/*{*/}
+        {/*    AccordionData.map( data => (*/}
+        {/*        <Accordion  style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>*/}
+        {/*            <AccordionSummary*/}
+        {/*                expandIcon={<ExpandMoreIcon/>}*/}
+        {/*                aria-controls="panel1bh-content"*/}
+        {/*                id="panel1bh-header">*/}
+        {/*                <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{data.title}</Typography>*/}
+        {/*            </AccordionSummary>*/}
+        {/*            <AccordionDetails>*/}
+        {/*                <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}>{data.childe}</Typography>*/}
+        {/*            </AccordionDetails>*/}
+        {/*        </Accordion>*/}
+        {/*    ))*/}
+        {/*}*/}
+
+                    <Accordion  style={styles.myAccordion} expanded={expanded === `panel${1}`} onChange={handleChange(`panel${1}`)}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon/>}
+                            aria-controls="panel1bh-content"
+                            id="panel1bh-header">
+                            <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{'شرکت‌های هواپیمایی'}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}>
+                                <CompanySidebar flight={flight} dispatch={dispatch} />
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+
+
+
         </>
     )
 }

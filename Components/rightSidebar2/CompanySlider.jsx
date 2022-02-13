@@ -15,6 +15,7 @@ import {ThemeProvider} from "@emotion/react";
 import theme from "../../styles/theme";
 import FormGroup from '@mui/material/FormGroup';
 import {Box,Avatar} from '@mui/material';
+import {useState} from "react";
 const company = [
     {
         id:1,
@@ -22,45 +23,122 @@ const company = [
         airline:"ایران ایر",
     },
     {
-        id:3,
+        id:2,
         image:aseman,
         airline:"آسمان"
     },
     {
-        id:4,
+        id:3,
         image:zagros,
-        airline:"زاگروس"
+        airline:"زاگرس"
     },
     {
-        id:5,
+        id:4,
         image:iranAirTour,
         airline:"ایران تور"
     },
     {
-        id:6,
+        id:5,
         image:kaspian,
         airline:"کاسپین"
     },
     {
-        id:7,
+        id:6,
         image:varesh,
         airline:"وارش"
     },
     {
-        id:8,
+        id:7,
         image:ata,
         airline:"آتا"
     },
 ]
-const CompanySidebar = () => {
+
+const category = ["ایران ایر", "آسمان","زاگرس","ایران تور","کاسپین","وارش","آتا"]
+// ({flight,dispatch})
+const CompanySidebar = ({flight,dispatch}) => {
+
+    // const handleChange = (event) => {
+    //     if(event.target.checked){
+    //         dispatch({type: 'companyFilter', payload: {companyName: event.target.id}})
+    //     }
+    // }
+    // return (
+    //     <>
+    //         <ThemeProvider theme={theme} >
+    //             <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'},}}>
+    //                 {
+    //                     company.map( data => (
+    //                         <Box sx={{display:'flex'}}>
+    //                             <FormControlLabel control={<input type="checkbox"  id={data.airline}/>} label={data.airline} onClick={handleChange}/>
+    //                         </Box>
+    //                     ))
+    //                 }
+    //             </FormGroup>
+    //         </ThemeProvider>
+    //     </>
+    // )
+    // ["ایران ایر", "آسمان","زاگرس","ایران تور","کاسپین","وارش","آتا"]
+    const [Checked, setChecked] = React.useState([]);
+
+    const handleToggle = (value) => {
+        const currentIndex = Checked.indexOf(value);
+        const newChecked = [...Checked];
+        if (currentIndex === -1){
+            newChecked.push(value);
+        }
+        else{
+            newChecked.splice(currentIndex,1);
+        }
+        setChecked(newChecked)
+        let companyFilters=[];
+        for (let ii = 0; ii < newChecked.length;ii++){
+            companyFilters.push(category[newChecked[ii]-1])
+        }
+        console.log(newChecked)
+        console.log(companyFilters)
+
+        if (
+            newChecked.length === 0 ||
+            newChecked.length === category.length
+        ) {
+            console.log(flight);
+        } else {
+            console.log(flight.filter(f => !companyFilters.indexOf(f.airline)));
+        }
+
+        // dispatch({type: 'companyFilter2', payload: {filters: newChecked,company:companyFilters}})
+        // console.log(companyFilters)
+    }
+
+
+
+    // console.log(companyFilters)
+    // console.log(companyFilters.indexOf('زاگرس'))
+
+    // const newFilters = {...Filters}
+    // newFilters[category] = filters
+    //
+    // setFilters(newFilters)
+
+
+
+
+
+
   return (
     <>
+
     <ThemeProvider theme={theme} >
      <FormGroup sx={{color:'black !important','& .PrivateSwitchBase-input':{color:'black !important'},}}>
     {
         company.map( data => (
             <Box sx={{display:'flex'}}>
-            <FormControlLabel control={<Checkbox />} label={data.airline} /> 
+            <FormControlLabel control={<input type="checkbox" id={data.id}
+                                              checked={Checked.indexOf(data.id) === -1 ? false : true}/>}
+                              label={data.airline}
+                              onChange={() => handleToggle(data.id)}
+                              />
             </Box>
         ))
     }

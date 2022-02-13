@@ -12,6 +12,8 @@ import {flights as data} from "./../data/data"
 import reducer from "./../Components/Reducer"
 // import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
+import Search from "./../Components/filters"
+
 
 export const FlightContext = createContext({
     flights: [], dispatch: () => {
@@ -23,27 +25,28 @@ export default function Home() {
     const [flightss, dispatch] = useReducer(reducer, []);
     return (
         <Box>
-            <NavBar/>
+            <Search/>
+            {/*<NavBar/>*/}
 
-            <SearchBox/>
-            <Container>
-                <ThemeProvider theme={theme}>
-
-
-                    <FlightContext.Provider value={{flightss, dispatch}}>
+            {/*<SearchBox/>*/}
+            {/*<Container>*/}
+            {/*    <ThemeProvider theme={theme}>*/}
 
 
-                        <RecentSearch/>
-                        <Advertise/>
-                        <YourQuestions/>
-                    </FlightContext.Provider>
-                    {/* <Plane_Ticket/> */}
-
-                </ThemeProvider>
-            </Container>
+            {/*        <FlightContext.Provider value={{flightss, dispatch}}>*/}
 
 
-            <Footer/>
+            {/*            <RecentSearch/>*/}
+            {/*            <Advertise/>*/}
+            {/*            <YourQuestions/>*/}
+            {/*        </FlightContext.Provider>*/}
+            {/*        /!* <Plane_Ticket/> *!/*/}
+
+            {/*    </ThemeProvider>*/}
+            {/*</Container>*/}
+
+
+            {/*<Footer/>*/}
         </Box>
 
 

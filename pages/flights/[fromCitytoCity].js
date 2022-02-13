@@ -10,8 +10,8 @@ import { styled } from '@mui/material/styles';
 import {flights as data} from "./../../data/data";
 import FrequentQuestions from "./../../Components/FrequentQuestions/FrequentQuestions"
 import { createContext, useReducer,useContext} from "react";
-import {FlightContext} from "./../../pages/index";
 import reducer from './../../Components/Reducer'
+
 const cities = [{fromCity:'مشهد',toCity: 'شیراز'},
     {fromCity:'مشهد',toCity: 'تهران'},
     {fromCity:'تهران',toCity: 'شیراز'},
@@ -26,12 +26,17 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
+
+// export const FlightContexttt = createContext({
+//     flights: [], dispatch: () => {
+//     }
+// });
+
 export default function Flights({flight}) {
     const [flights, dispatch] = useReducer(reducer, flight);
     return (
         <Box>
             <NavBar/>
-            {console.log(flights)}
             <Container sx={{marginY:'3rem'}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
