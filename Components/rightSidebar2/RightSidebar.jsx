@@ -15,35 +15,41 @@ const styles = {
         border:'1px solid rgba(0, 0, 0, .1)'
     },
 }
-export default function RightSidebar({flight,dispatch}) {
-    const AccordionData=[
-        {
-            id:1,
-            title:'ساعت حرکت',
-            childe:<TimeSlider flight={flight} dispatch={dispatch} />
 
-        },
-        {
-            id:2,
-            title:'نوع بلیط',
-            childe:<TypeSidebar first={'چارتر'} second={'سیستمی'}/>
-        },
-        {
-            id:3,
-            title:'کلاس پروازی',
-            childe:<TypeSidebar first={'اکونومی'} second={'بیزینس'}/>
-        },
-        {
-            id:4,
-            title:'شرکت‌های هواپیمایی',
-            childe:<CompanySidebar/>
-        },
-        {
-            id:5,
-            title:'موارد دیگر',
-            childe:<TypeSidebar first={'نمایش بلیط‌های تکراری'} second={'نمایش بلیط‌های موجود'}/>
-        },
-    ]
+function panels({flight,dispatch}){
+    return([
+            {
+                id:1,
+                title:'ساعت حرکت',
+                childe:<TimeSlider flight={flight} dispatch={dispatch} />
+
+            },
+            {
+                id:2,
+                title:'نوع بلیط',
+                childe:<TypeSidebar first={'چارتر'} second={'سیستمی'} flight={flight} dispatch={dispatch}/>
+            },
+            {
+                id:3,
+                title:'کلاس پروازی',
+                childe:<TypeSidebar first={'اکونومی'} second={'بیزینس'} flight={flight} dispatch={dispatch}/>
+            },
+            {
+                id:4,
+                title:'شرکت‌های هواپیمایی',
+                childe:<CompanySidebar flight={flight} dispatch={dispatch}/>
+            },
+            {
+                id:5,
+                title:'موارد دیگر',
+                childe:<TypeSidebar first={'نمایش بلیط‌های تکراری'} second={'نمایش بلیط‌های موجود'} flight={flight} dispatch={dispatch}/>
+            },
+        ]
+    )
+}
+
+export default function RightSidebar({flight,dispatch}) {
+    const AccordionData = panels({flight,dispatch});
     const [expanded, setExpanded] = React.useState('panel1');
   
     const handleChange = (panel) => (event, newExpanded) => {
@@ -51,7 +57,6 @@ export default function RightSidebar({flight,dispatch}) {
     };
     return(
         <>
-            {console.log(flight[0])}
         <Accordion style={styles.myAccordion}>
                     <AccordionSummary
                         id="panel1bh-header">
@@ -59,36 +64,20 @@ export default function RightSidebar({flight,dispatch}) {
                     </AccordionSummary>
                 </Accordion>
         {
-            // AccordionData.map( data => (
-            //     <Accordion  style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>
-            //         <AccordionSummary
-            //             expandIcon={<ExpandMoreIcon/>}
-            //             aria-controls="panel1bh-content"
-            //             id="panel1bh-header">
-            //             <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{data.title}</Typography>
-            //         </AccordionSummary>
-            //         <AccordionDetails>
-            //             <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}>{data.childe}</Typography>
-            //         </AccordionDetails>
-            //     </Accordion>
-            // ))
-                <Accordion  style={styles.myAccordion} expanded={expanded === `panel1`} onChange={handleChange(`panel1`)}>
+            AccordionData.map( data => (
+                <Accordion  style={styles.myAccordion} expanded={expanded === `panel${data.id}`} onChange={handleChange(`panel${data.id}`)}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header">
-                        <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{'ساعت حرکت'}</Typography>
+                        <Typography sx={{fontFamily:'AliBaba',color: theme.palette.gray.five,flexShrink: 0,paddingY:'.8rem',fontSize:'.875rem',fontWeight: '500'}}>{data.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}><TimeSlider flight={flight} dispatch={dispatch} /></Typography>
+                        <Typography sx={{fontFamily:'AliBaba',color:theme.palette.gray.four,fontSize:'1rem',lineHeight:'36px',marginRight:'3.2rem',marginRight:'10px',marginLeft:'20px'}}>{data.childe}</Typography>
                     </AccordionDetails>
                 </Accordion>
-
-
-
+            ))
         }
-
-        
         </>
     )
 }

@@ -1,7 +1,7 @@
 import YourQuestionsItem from "./../YourQuestions/YourQuestionsItem";
 
 
-export function questionsMaker(props){
+function questionsMaker(props){
     return ([
         {
             id: 1,
