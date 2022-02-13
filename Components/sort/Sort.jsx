@@ -2,7 +2,7 @@ import React from "react";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-
+import { Typography } from "@mui/material";
 
 const Sort = () => {
     const [value, setValue] = React.useState(0);
@@ -11,9 +11,10 @@ const Sort = () => {
       setValue(newValue);
     };
   return (
-    <Box sx={{ maxWidth: 480, bgcolor: 'background.paper',border:1,borderColor: 'grey.500',borderRadius:'2rem'}}>
+    <>
+    <Typography>مرتب سازی:</Typography>
+    <Box sx={{direction:'rtl',bgcolor: 'background.paper',border:1,borderColor: 'grey.500',borderRadius:'2rem'}}>
       <Tabs
-
         value={value}
         onChange={handleChange}
         variant="scrollable"
@@ -28,6 +29,7 @@ const Sort = () => {
 
       </Tabs>
     </Box>
+    </>
   );
 };
 
