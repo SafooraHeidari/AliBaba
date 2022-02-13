@@ -42,15 +42,8 @@ export function questionsMaker(props){
     )
 }
 
-
-
-
 export default function FrequentQuestions(props){
-    {console.log(props.flight.from)}
-
     const Questions = questionsMaker(props);
-
-
     return(
         <>
             {Questions.map(question =>
