@@ -5,7 +5,7 @@ import {ArrowLeft} from "react-bootstrap-icons";
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 import theme from "../../styles/theme";
 
-function RecentSearch(){
+function RecentSearch(props){
     return (
         <Box sx={{direction:'rtl'}}>
             <Card sx={{ padding: 1, width: 160, height:70.8,display:'flex',flexDirection:'column'}}>

@@ -1,31 +1,51 @@
-// import {Box, Container} from "@mui/material";
-// import theme from "../styles/theme";
-// import Footer from '../Components/Footer/Footer'
-// import {ThemeProvider} from "@emotion/react";
-// import NavBar from "../Components/NavBar/NavBar";
-// import RecentSearch from "../Components/RecentSearch/RecentSearch";
-// import YourQuestions from "../Components/YourQuestions/YourQuestions";
-// import Advertise from './../Components/Advertise/Advertise'
-import Sort from "../Components/sort/Sort";
+import {Box, Container} from "@mui/material";
+import theme from "../styles/theme";
+import Footer from '../Components/Footer/Footer'
+import {ThemeProvider} from "@emotion/react";
+import NavBar from "../Components/NavBar/NavBar";
+import RecentSearch from "../Components/RecentSearch/RecentSearch";
+import YourQuestions from "../Components/YourQuestions/YourQuestions";
+import Advertise from './../Components/Advertise/Advertise'
+import SearchBox from './../Components/SearchBox/SearchBox';
+import {useState, createContext, useReducer} from "react";
+import {flights as data} from "./../data/data"
+import reducer from "./../Components/Reducer"
+// import Plane_Ticket from "../Components/PlaneTicket/Plane_Ticket";
 
-import { Box } from "@mui/material";
-import SearchCardContainer from "./../Components/SearchCard/SearchCardContainer";
+
+export const FlightContext = createContext({
+    flights: [], dispatch: () => {
+    }
+    });
 
 export default function Home() {
-  return (
-    <Box>
-      <Sort />
 
-      <SearchCardContainer />
+    const [flightss, dispatch] = useReducer(reducer, []);
+    return (
+        <Box>
+            <NavBar/>
 
-      {/*<NavBar/>*/}
-      {/*<Container>*/}
-      {/*    <RecentSearch/>*/}
-      {/*    <Advertise/>*/}
-      {/*    <YourQuestions/>*/}
-      {/*</Container>*/}
+            <SearchBox/>
+            <Container>
+                <ThemeProvider theme={theme}>
 
-      {/*    <Footer/>*/}
-    </Box>
-  );
+
+                    <FlightContext.Provider value={{flightss, dispatch}}>
+
+
+                        <RecentSearch/>
+                        <Advertise/>
+                        <YourQuestions/>
+                    </FlightContext.Provider>
+                    {/* <Plane_Ticket/> */}
+
+                </ThemeProvider>
+            </Container>
+
+
+            <Footer/>
+        </Box>
+
+
+    )
 }

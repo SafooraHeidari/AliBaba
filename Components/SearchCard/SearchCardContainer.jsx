@@ -1,12 +1,11 @@
 import Box from "@mui/material/Box";
-import {flights} from './../../data/data';
-import SearchCard from './SearchCard'
+import Typography from "@mui/material/Typography";
+import SearchCard from './SearchCard';
 
-export default function SearchCardContainer(){
+export default function SearchCardContainer({flight}){
     return(
         <Box>
-            {flights.map(flight =>
-                    <SearchCard flight={flight}/>)}
+            {flight ? flight.map(fl => <SearchCard flight={fl}/>) : <Typography>No Flight</Typography>}
         </Box>
     )
 }

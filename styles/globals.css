@@ -1,3 +1,6 @@
+:root{
+  --swiper-navigation-size: 10px !important;
+}
 html,
 body{
   padding: 0;
@@ -25,4 +28,13 @@ a {
   font-family: 'Alibaba';
   font-style: normal;
   src: local('Alibaba'), url('./assest/fonts/alibaba-regular-588b6fcf.woff') format('woff');
+}
+.swiper-button-next { color: #959EA6 !important; font-size:30% !important }
+.swiper-button-prev { color: #959EA6 !important; }
+.swiper-button-prev:hover {
+  color: #51a2e7 !important;
+}
+.swiper-button-next:hover {
+  color: #51a2e7 !important;
+  margin: 0  5px;
 }

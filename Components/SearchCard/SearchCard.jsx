@@ -8,7 +8,7 @@ import { styled } from "@mui/material/styles";
 export default function SearchCard(props) {
     return (
         <Grid container
-              sx={{width: '50%', direction: 'rtl', border: '1px solid rgba(0, 0, 0, .1)', borderRadius: '5px', marginBottom: '18px'}}>
+              sx={{width: '100%', direction: 'rtl', border: '1px solid rgba(0, 0, 0, .1)', borderRadius: '5px', marginBottom: '18px'}}>
             <Grid item xs={12} sm={6} md={9} sx={{padding: 2}}>
                 <RightSidePanel data={props}/>
             </Grid>
