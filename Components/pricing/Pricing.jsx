@@ -12,8 +12,8 @@ const Pricing = () => {
               border: 1,
               borderColor: "grey.500",
               borderRadius: "1rem",
-              display: "flex",
-              flexDirection: "row",
+              display:"flex",
+              flexDirection:{ xs: "column-reverse", md: "row" },
               p: 1,
             }}
           >
