@@ -29,7 +29,7 @@ const company = [
     {
         id:3,
         image:zagros,
-        airline:"زاگروس"
+        airline:"زاگرس"
     },
     {
         id:4,
