@@ -15,8 +15,7 @@ const TypeSidebar = ({first,second}) => {
       <FormControlLabel control={<Checkbox {...label}  color="secondary" />} label={second} />
     </FormGroup>
     </ThemeProvider>
-    </>
-          )
+    </>)
 }
 
 export default TypeSidebar

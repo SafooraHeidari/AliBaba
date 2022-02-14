@@ -9,9 +9,7 @@ function valuetext(value) {
 }
 const minDistance = 1;
 export default function TimeSlider({flight,dispatch}) {
-  {console.log(flight)}
-  {console.log(dispatch)}
-  const [value, setValue] = React.useState([7, 21]);
+  const [value, setValue] = React.useState([7, 23]);
 
   const handelFilter = () => {
     dispatch({type: 'timeFilter', payload: {from: value[0]}})
@@ -33,7 +31,7 @@ export default function TimeSlider({flight,dispatch}) {
     <Box onClick={handelFilter}>
       <Slider
       min={7}
-      max={21}
+      max={23}
         getAriaLabel={() => 'Minimum distance'}
         disableSwap
         sx={{'& .css-1kz0hui-MuiSlider-valueLabel':{color:'black !important',backgroundColor:'transparent !important'}, '& .css-eg0mwd-MuiSlider-thumb':{backgroundColor:'white !important'},'& .css-14pt78w-MuiSlider-rail':{backgroundColor:'grey !important'},'& .css-eg0mwd-MuiSlider-thumb:hover':{border:'2px solid #007aff; !important'}}}

@@ -22,37 +22,60 @@ const company = [
         airline:"ایران ایر",
     },
     {
-        id:3,
+        id:2,
         image:aseman,
         airline:"آسمان"
     },
     {
-        id:4,
+        id:3,
         image:zagros,
         airline:"زاگروس"
     },
     {
-        id:5,
+        id:4,
         image:iranAirTour,
         airline:"ایران تور"
     },
     {
-        id:6,
+        id:5,
         image:kaspian,
         airline:"کاسپین"
     },
     {
-        id:7,
+        id:6,
         image:varesh,
         airline:"وارش"
     },
     {
-        id:8,
+        id:7,
         image:ata,
         airline:"آتا"
     },
 ]
-const CompanySidebar = () => {
+const category = ["ایران ایر", "آسمان","زاگرس","ایران تور","کاسپین","وارش","آتا"];
+const CompanySidebar = ({flight,dispatch}) => {
+
+    const [Checked, setChecked] = React.useState([]);
+
+    const handleToggle = (value) => {
+        const currentIndex = Checked.indexOf(value);
+        const newChecked = [...Checked];
+        if (currentIndex === -1){
+            newChecked.push(value);
+        }
+        else{
+            newChecked.splice(currentIndex,1);
+        }
+        setChecked(newChecked)
+        let companyFilters=[];
+        for (let ii = 0; ii < newChecked.length;ii++){
+            companyFilters.push(category[newChecked[ii]-1])
+        }
+        console.log(newChecked)
+        console.log(companyFilters)
+        dispatch({type: 'companyFilter', payload: {filters: newChecked,category:category,companyFilters:companyFilters}})
+    }
+
   return (
     <>
     <ThemeProvider theme={theme} >
@@ -60,7 +83,11 @@ const CompanySidebar = () => {
     {
         company.map( data => (
             <Box sx={{display:'flex'}}>
-            <FormControlLabel control={<Checkbox />} label={data.airline} /> 
+                <FormControlLabel control={<input type="checkbox" id={data.id}
+                                                  checked={Checked.indexOf(data.id) === -1 ? false : true}/>}
+                                  label={data.airline}
+                                  onChange={() => handleToggle(data.id)}
+                />
             </Box>
         ))
     }

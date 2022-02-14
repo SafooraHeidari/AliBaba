@@ -77,14 +77,3 @@ export async function getStaticProps(context) {
         }
     }
 }
-
-
-// export async function getStaticProps({params}) {
-//     const id = params.productID
-//     const product = ProductData.filter(p => p.id === Number(id))[0]
-//     return {
-//         props: {
-//             product
-//         },
-//     }
-// }
