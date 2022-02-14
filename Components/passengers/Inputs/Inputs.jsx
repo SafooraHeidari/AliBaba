@@ -18,11 +18,10 @@ import FormLabel from "@mui/material/FormLabel";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import Divider from "@mui/material/Divider";
 
-const Inputs = ({ passenger }) => {
+const Inputs = () => {
   return (
     <Box sx={{width:"100%"}}>
-      {passenger.map((item) => (
-        <Box key={item.id}>
+        <Box>
           <Grid
             
             container
@@ -93,7 +92,7 @@ const Inputs = ({ passenger }) => {
           </Grid>
           <Divider sx={{mt:2,mb:2}}/>
         </Box>
-      ))}
+
     </Box>
   );
 };

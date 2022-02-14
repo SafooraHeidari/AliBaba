@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -23,7 +23,16 @@ import Inputs from "./Inputs/Inputs";
 import AddPassengers from "./AddPassengers/AddPassengers";
 const Passengers = () => {
   const [passenger, setPassenger] = useState([
-    {id:1,firstName:"",lastName:"",latinFirstName:"",latinLastName:"",Gender:"",nationalCode:"",birthDay:""}
+    {
+      id: 1,
+      firstName: "",
+      lastName: "",
+      latinFirstName: "",
+      latinLastName: "",
+      Gender: "",
+      nationalCode: "",
+      birthDay: "",
+    },
   ]);
   return (
     <Box
@@ -34,13 +43,20 @@ const Passengers = () => {
         display: "flex",
         flexDirection: "column",
         p: 2,
-        mb:3
+        mb: 3,
       }}
     >
-      <Head/>
-      <Options/>
-      <Inputs passenger={passenger}/>
-      <AddPassengers passenger={passenger} setPassenger={setPassenger}/>
+      <Head />
+
+      {passenger.map((item) => (
+        <Box key={item.id}>
+          <Options passengerId={item.id} passenger={passenger} setPassenger={setPassenger}/>
+          <Inputs passenger={passenger} />
+        </Box>
+      ))}
+      {/* <Options />
+      <Inputs passenger={passenger} /> */}
+      <AddPassengers passenger={passenger} setPassenger={setPassenger} />
     </Box>
   );
 };
