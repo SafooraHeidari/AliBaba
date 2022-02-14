@@ -4,6 +4,7 @@ import {Button} from "@mui/material";
 import theme from "../../styles/theme";
 import CustomButton from "./CustomButton";
 import PN from "persian-number";
+import Link from 'next/link'
 
 export default function LeftSidePanel(props){
     return(
@@ -21,14 +22,19 @@ export default function LeftSidePanel(props){
             </Box>
             {!props.data.flight.full ?
                 <>
+                    <Link href={'/flights/buyTicket'}>
                     <CustomButton>انتخاب بلیط</CustomButton>
+                    </Link>
                     <Typography sx={{fontFamily: 'AliBaba', color: theme.palette.danger.four, fontSize: '12px', fontWeight:'400'}}>
                         {PN.convertEnToPe(props.data.flight.seat)} صندلی باقیمانده
                     </Typography>
                 </>
             :
                 <>
-                    <CustomButton disabled>انتخاب بلیط</CustomButton>
+
+                        <CustomButton disabled>انتخاب بلیط</CustomButton>
+
+
                     <Typography sx={{fontFamily: 'AliBaba', color: theme.palette.danger.four, fontSize: '12px', fontWeight:'400'}}>
                         تکمیل ظرفیت
                     </Typography>

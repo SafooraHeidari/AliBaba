@@ -34,20 +34,20 @@ export default function All(){
     };
 
     return(
-        <Accordion sx={{width:'100%'}}>
-            <AccordionSummary
-                aria-controls="panel1a-content"
-                id="panel1a-header">
-                <SearchCard/>
-            </AccordionSummary>
-            <AccordionDetails>
-                <TabPanel onChange={() => handleChange} value={value} index={'one'}>
-                    Item One
-                </TabPanel>
-                <TabPanel onChange={() => handleChange} value={value} index={'two'}>
-                    Item Two
-                </TabPanel>
-            </AccordionDetails>
-        </Accordion>
+            <Accordion sx={{width:'100%'}}>
+                <AccordionSummary
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <SearchCard/>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <TabPanel onChange={() => handleChange} value={value} index={'one'}>
+                        Item One
+                    </TabPanel>
+                    <TabPanel onChange={() => handleChange} value={value} index={'two'}>
+                        Item Two
+                    </TabPanel>
+                </AccordionDetails>
+            </Accordion>
     )
 }

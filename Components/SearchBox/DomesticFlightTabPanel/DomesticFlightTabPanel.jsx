@@ -72,7 +72,7 @@ export default function DomesticFlightTabPanel(props){
         //
         //         && item.to.toLowerCase().includes(searchData.toCity.toLowerCase())))
         // console.log(searchData)
-        props.onFilterData(searchData);
+        // props.onFilterData(searchData);
     }
 
     return(

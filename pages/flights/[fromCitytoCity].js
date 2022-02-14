@@ -9,7 +9,12 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import {flights as data} from "./../../data/data";
 import FrequentQuestions from "./../../Components/FrequentQuestions/FrequentQuestions"
-
+import { createContext, useReducer,useContext} from "react";
+import {FlightContext} from "./../../pages/index";
+import reducer from './../../Components/Reducer';
+import Sort from './../../Components/sort/Sort';
+import theme from "../../styles/theme";
+import { ThemeProvider } from "@mui/private-theming";
 const cities = [{fromCity:'مشهد',toCity: 'شیراز'},
     {fromCity:'مشهد',toCity: 'تهران'},
     {fromCity:'تهران',toCity: 'شیراز'},
@@ -24,26 +29,29 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-export default function flights({flight}) {
+export default function Flights({flight}) {
+    const [flights, dispatch] = useReducer(reducer, flight);
     return (
-        <Box>
+        <Box bgcolor={theme.palette.bg.main}>
             <NavBar/>
             <Container sx={{marginY:'3rem'}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={9}>
-                    <DateSwiper/><SearchCardContainer flight={flight}/>
+                    <DateSwiper/>
+                    <Sort/>
+                    <SearchCardContainer flight={flights}/>
                     </Grid>
                     <Grid item xs={3}>
-                    <RightSidebar/>
+                    <RightSidebar flight={flights} dispatch={dispatch}/>
                     </Grid>
-
                     <FrequentQuestions flight={flight[0]}/>
                 </Grid>
             </Box>
             </Container>
             <Footer/>
         </Box>
+       
     )
 };
 
@@ -68,17 +76,4 @@ export async function getStaticProps(context) {
             flight
         }
     }
-
-
 }
-
-
-// export async function getStaticProps({params}) {
-//     const id = params.productID
-//     const product = ProductData.filter(p => p.id === Number(id))[0]
-//     return {
-//         props: {
-//             product
-//         },
-//     }
-// }

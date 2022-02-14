@@ -50,21 +50,12 @@ const sx = {
     marginTop: '-50px',
     boxShadow: '0 2px 1px -1px rgba(0, 0, 0, .08)',
     border: 'solid 1px rgba(0, 0, 0, .1)',
-    backgroundColor: 'white',
-
-    "& .css-1ley35p-MuiContainer-root ": {
-        backgroundColor: 'white',
-    }
+    backgroundColor: 'white!important',
+    marginBottom:'1.5rem',
 }
 
 export default function SearchBox() {
-    const flights = useContext(FlightContext)
-
-    const filterDataHandler = (enteredSearchData) => {
-        const selectFlight = flights.filter(item =>
-            (item.from.toLowerCase().includes(enteredSearchData.fromCity.toLowerCase())
-                && item.to.toLowerCase().includes(enteredSearchData.toCity.toLowerCase())));
-    }
+    const {flightss,dispatch} = useContext(FlightContext)
 
     const [value, setValue] = useState('1');
     const handleChange = (event, newValue) => {
@@ -79,10 +70,10 @@ export default function SearchBox() {
             {value === "6" && <img src={HotelImg.src} style={style.imageStyles}/>}
             {value === "7" && <img src={ResidenceImg.src} style={style.imageStyles}/>}
 
-            <Container sx={{}}>
+            <Container>
                 <ThemeProvider theme={theme}>
                     <Container sx={sx}>
-                        <TabContext sx={{direction: 'rtl', backgroundColor: 'white'}} value={value}>
+                        <TabContext sx={{direction: 'rtl'}} value={value}>
                             <Box sx={{borderBottom: 1, borderColor: 'divider', direction: 'rtl'}}>
                                 <TabList onChange={handleChange} textColor="secondary" indicatorColor="secondary"
                                          centered>
@@ -95,7 +86,7 @@ export default function SearchBox() {
                                     <Tab icon={<Residence/>} label="ویلا و اقامتگاه" value="7"/>
                                 </TabList>
                             </Box>
-                            <TabPanel value="1"><DomesticFlightTabPanel onFilterData={filterDataHandler}/></TabPanel>
+                            <TabPanel value="1"><DomesticFlightTabPanel/></TabPanel>
                             <TabPanel value="2"><ForeignFlightTabPanel/></TabPanel>
                             <TabPanel value="3"><TrainTabPanel/></TabPanel>
                             <TabPanel value="4"><BusTabPanel/></TabPanel>
